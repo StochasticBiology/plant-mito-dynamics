@@ -45,6 +45,7 @@ Graph plotting and statistical analysis was done using scripts
 `CellSizesQuantify.R` For Figure S5 using CellSizesQuantify.csv as input
 
 All video data will be made available in subdirectories 
+
 mtgfp-videos
 msh1-videos
 friendly-videos
