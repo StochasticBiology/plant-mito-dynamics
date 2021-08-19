@@ -1,0 +1,66 @@
+,Shorthand,Type,Video,Y (long),X (short),All sizes taken from ADJUSTEDCROPPED videos
+trackmaterun-190321nice3,GFP11,mtGFP,,46.811,14.753,615.274
+trackmaterun-bigcellmanymitos2,GFP1,mtGFP,,51.739,10.831,546.017
+trackmaterun-manycells120-bonuscell,GFP2,mtGFP,,55.943,13.218,737.903
+trackmaterun-090421ok1,GFP12,mtGFP,,58.878,20.569,1113.034
+trackmaterun-nice120,GFP3,mtGFP,,117.607,30.4,3224.905
+trackmaterun-190321nice2,GFP13,mtGFP,,47.929,17.458,785.032
+trackmaterun-goodvid120,GFP4,mtGFP,,77.805,16.317,1202.689
+trackmaterun-020421,GFP14,mtGFP,,84.412,22.708,1722.055
+trackmaterun-manycells120-recrop,GFP5,mtGFP,,85.229,20.128,1590.431
+trackmaterun-onefourzoom,GFP6,mtGFP,,68.249,18.123,1125.252
+trackmaterun-300119,GFP7,mtGFP,,71.925,15.476,941.633
+trackmaterun-090421ok2,GFP15,mtGFP,,42.128,20.485,682.466
+trackmaterun-190321nice1,GFP16,mtGFP,,81.775,27.883,2007.786
+trackmaterun-bigcellmanymitos,GFP8,mtGFP,,117.777,23.93,2697.122
+trackmaterun-singlecell120,GFP9,mtGFP,,75.242,20.575,1313.068
+trackmaterun-190321bit,GFP17,mtGFP,,89.305,21.8,1968.255
+trackmaterun-031219,GFP10,mtGFP,,89.531,16.445,1504.609
+trackmaterun-090421nice,GFP18,mtGFP,,89.388,26.008,2000.552
+trackmaterun-msh1_11-cell1,MSH1,mtGFP-msh1,trackmaterun-msh1_11-cell1 C2-msh1-smallcells-ADJUSTEDCROPPED-cell1_Tracks-0_8-6-4-5-2.xml.csv,59.535,12.326,804.406
+trackmaterun-Msh1_2-cell1,MSH2,mtGFP-msh1,trackmaterun-Msh1_2-cell1 C2-msh1bitjumpy2ADJUSTEDCROPPED-cell1_Tracks_1_4_4_5_2.xml.csv,74.995,21.727,1422.019
+trackmaterun-msh1_6-cell1,MSH3,mtGFP-msh1,trackmaterun-msh1_6-cell1 C2-msh1-alright-Correct3DDrift-ADJUSTEDCROPPED-cell1_Tracks-0_8-4-4-5-2.xml.csv,37.074,19.459,906.996
+trackmaterun-msh1_15-cell1,MSH4,mtGFP-msh1,trackmaterun-msh1_15-cell1 C2-msh1-manycellsniceADJUSTEDCROPPED-cell1_Tracks-1-5-4-5-2.xml.csv,64.957,20.747,1063.630
+trackmaterun-Msh1_1-cell1,MSH5,mtGFP-msh1,trackmaterun-Msh1_1-cell1 C2-msh1bitjumpyADJUSTEDCROPPED-cell1_Tracks-1_4_4_5_2.xml.csv,66.051,21.509,1237.424
+trackmaterun-Msh1_5,MSH6,mtGFP-msh1,trackmaterun-Msh1_5 C2-line11-9-2-goodbitjumpyADJUSTEDCROPPED_Tracks-1-4-4-5-2.xml.csv,108.912,15.499,1789.144
+trackmaterun-msh1_16,MSH7,mtGFP-msh1,trackmaterun-msh1_16 C2-msh1-niceADJUSTEDCROPPED_Tracks-1-6-4-5-3-F7_15.xml.csv,51.327,21.763,1131.541
+trackmaterun-msh1_10,MSH8,mtGFP-msh1,trackmaterun-msh1_10 C2-msh1-ratherjumpy-ADJUSTEDCROPPED_Tracks-1-4-4-5-2.xml.csv,91.456,23.247,2221.831
+trackmaterun-Msh1_4,MSH9,mtGFP-msh1,trackmaterun-Msh1_4 C2-line11-9-2-goodbitjumpy2ADJUSTEDCROPPED_Tracks-1-4-4-5-2.xml.csv,82.112,17.731,1286.388
+trackmaterun-Msh1_3-cell1,MSH10,mtGFP-msh1,trackmaterun-Msh1_3-cell1 C2-line11-9-2-good2ADJUSTEDCROPPED_Tracks-1-3-4-5-2-F9.xml.csv,108.022,25.193,2983.425
+trackmaterun-msh1_7-cell1,MSH11,mtGFP-msh1,trackmaterun-msh1_7-cell1 C2-msh1-drifty-Correct3DDrift-ADJUSTEDCROPPED-cell1_Tracks-1-4-4-5-2.xml.csv,58.344,20.517,1034.811
+trackmaterun-msh1_14-cell1,MSH12,mtGFP-msh1,trackmaterun-msh1_14-cell1 C2-msh1-loadscells-3DDriftCorrectADJUSTEDCROPPED-cell1_Tracks-1-7-3-4-2-F8_43.xml.csv,42.052,16.639,619.575
+trackmaterun-Msh1_2-cell2,MSH13,mtGFP-msh1,trackmaterun-Msh1_2-cell2 C2-msh1bitjumpy2ADJUSTEDCROPPED-cell2_Tracks_1_4_4_5_2.xml.csv,51.708,19.323,885.533
+trackmaterun-msh1_11-cell2,MSH14,mtGFP-msh1,trackmaterun-msh1_11-cell2 C2-msh1-smallcells-ADJUSTEDCROPPED-cell2_Tracks-0_8-6-3-5-2.xml.csv,55.075,13.425,584.790
+trackmaterun-msh1_15-cell2,MSH15,mtGFP-msh1,trackmaterun-msh1_15-cell2 C2-msh1-manycellsniceADJUSTEDCROPPED-cell2_Tracks-0_8-6-4-5-2-F6_9.xml.csv,53.012,19.245,960.824
+trackmaterun-msh1_6-cell2,MSH16,mtGFP-msh1,trackmaterun-msh1_6-cell2 C2-msh1-alright-Correct3DDrift-ADJUSTEDCROPPED-cell2_Tracks-1-5-4-5-2.xml.csv,58.112,22.983,1226.012
+trackmaterun-Msh1_3-cell3,MSH17,mtGFP-msh1,trackmaterun-Msh1_3-cell3 C2-line11-9-2-good2ADJUSTEDCROPPED-cell3_Tracks-1-4-4-5-2.xml.csv,64.458,16.743,1008.383
+trackmaterun-msh1_8,MSH18,mtGFP-msh1,trackmaterun-msh1_8 C2-msh1-greatbutdrifty-Correct3DDriftTWICEADJUSTEDCROPPED_Tracks-1-4-4-5-2.xml.csv,66.093,19.584,1023.897
+trackmaterun-msh1_12,MSH19,mtGFP-msh1,trackmaterun-msh1_12 C2-msh1nicebutreallyrjumpyADJUSTEDCROPPED_Tracks-1-5-4-5-2.xml.csv,65.191,21.258,1364.212
+trackmaterun-Msh1_1-cell2,MSH20,mtGFP-msh1,trackmaterun-Msh1_1-cell2 C2-msh1bitjumpyADJUSTEDCROPPED-cell2_Tracks_1_4_4_5_2.xml.csv,55.700,14.863,807.691
+trackmaterun-msh1_13,MSH21,mtGFP-msh1,trackmaterun-msh1_13 C2-msh1-justoneADJUSTEDCROPPED_Tracks1-4-4-5-2.xml.csv,65.393,15.187,939.470
+trackmaterun-msh1_9,MSH22,mtGFP-msh1,trackmaterun-msh1_9 C2-msh1-middle-Correct3DDrift-ADJUSTEDCROPPED_Tracks-1-4-4-5-2.xml.csv,80.738,16.307,1250.798
+trackmaterun-Msh1_3-cell2,MSH23,mtGFP-msh1,trackmaterun-Msh1_3-cell2 C2-line11-9-2-good2ADJUSTEDCROPPED-cell2_Tracks-1-4-4-5-2.xml.csv,79.721,15.929,1188.613
+trackmaterun-msh1_14-cell5,MSH24,mtGFP-msh1,trackmaterun-msh1_14-cell5 C2-msh1-loadscells-3DDriftCorrectADJUSTEDCROPPED-cell5_Tracks-1-6-3-4-2.xml.csv,56.462,26.350,1292.602
+trackmaterun-msh1_14-cell2,MSH25,mtGFP-msh1,trackmaterun-msh1_14-cell2 C2-msh1-loadscells-3DDriftCorrectADJUSTEDCROPPED-cell2_Tracks-0_8-8-4-5-2-F9_7.xml.csv,51.500,21.200,982.454
+trackmaterun-msh1_7-cell2,MSH26,mtGFP-msh1,trackmaterun-msh1_7-cell2 C2-msh1-drifty-Correct3DDrift-ADJUSTEDCROPPED-cell2_Tracks-1-4-4-5-2.xml.csv,55.221,14.458,851.658
+trackmaterun-msh1_14-cell3,MSH27,mtGFP-msh1,trackmaterun-msh1_14-cell3 C2-msh1-loadscells-3DDriftCorrectADJUSTEDCROPPED-cell3_Tracks-0_8-5-4-5-2.xml.csv,28.630,13.663,302.386
+trackmaterun-msh1_14-cell4,MSH28,mtGFP-msh1,trackmaterun-msh1_14-cell4 C2-msh1-loadscells-3DDriftCorrectADJUSTEDCROPPED-cell4_Tracks-1-6-4-5-2.xml.csv,40.270,16.946,661.784
+trackmaterun-Friendly100918,F1,friendly,/ trackmaterun-Friendly100918 friendly120vidbestADJUSTEDCROPPED-100918_Tracks-1-4-4-5-2-F6_9,90.8,15.497,1323.226
+trackmaterun-Friendly080818-2,F2,friendly,/ trackmaterun-Friendly080818-2 Friendly2_canusejustbumpupnoiseforPI-ADJUSTEDCROPPED_Tracks-1-4-4-5-2-F5_73,92.372,22.655,2017.859
+trackmaterun-Friendly080818-5,F3,friendly,/ trackmaterun-Friendly080818-5 Friendly5_candeffousejustbumppi-ADJUSTEDCROPPED_Tracks-1-5-4-5-2-F0,71.528,16.940,1113.884
+trackmaterun-Friendly010319,F4,friendly,/ trackmaterun-Friendly010319 Friendlyniceunderr5minADJUSTEDCROPPED-010319_Tracks-1-4-4-5-2-F5_54,133.543,22.9,3061.343
+trackmaterun-Friendly080818-4,F5,friendly,/ trackmaterun-Friendly080818-4 Friendly4_canusejustbumpupnoiseforPI-ADJUSTEDCROPPED_Tracks-1-5-4-5-2-F9_24,38.842,12.787,522.632
+trackmaterun-FriendlyNice120,F6,friendly,/ trackmaterun-FriendlyNice120 FriendlyPInice200ADJUSTEDCROPPED-1-TRIMMEDTO120FRAMES_Tracks-1-4-4-5-2-F6_34,58.621,21.171,1040.007
+trackmaterun-Friendly220219-7,F7,friendly,/ trackmaterun-Friendly220219-7 FRIENDLYpiunder5mins4_TWOMOREGREATONES-2-ADJUSTEDCROPPED_Tracks-1-4_5-4-5-2-F7_37,59.248,16.918,873.729
+trackmaterun-Friendly220219-1,F8,friendly,/ trackmaterun-Friendly220219-1 FRIENDLYpiunder5minsADJUSTEDCROPPED-220219-1_Tracks-1-4-4-5-2-F7_53,85.104,21.034,1629.700
+trackmaterun-Friendly220219-6,F9,friendly,/ trackmaterun-Friendly220219-6 FRIENDLYpiunder5mins4_TWOMOREGREATONES-1-ADJUSTEDCROPPED_Tracks-1-4-4-5-2-F4_88,50.998,21.387,920.867
+trackmaterun-Friendly060419-1,F10,friendly,/ trackmaterun-Friendly060419-1 FRIENDLYunder5minADJUSTEDCROPPED_1-060419_Tracks1-5-4-5-2-F1_32,57.720,18.972,1029.945
+trackmaterun-Friendly100918-2,F11,friendly,/ trackmaterun-Friendly100918-2 friendly120vid_somemitosoutoffocus-ADJUSTEDCROPPED_Tracks-1-7-4-5-2-F6_81,66.328,15.127,1000.436
+trackmaterun-Friendly010319-2,F12,friendly,/ trackmaterun-Friendly010319-2 Friendlyniceunderr5min-2-bonuscell-ADJUSTEDCROPPED_Tracks-1-3-4-5-2-F4_48,74.679,10.507,863.814
+trackmaterun-Friendly080818-6,F13,friendly,/ trackmaterun-Friendly080818-6 Friendly6_candeffousejustbumppi-ADJUSTEDCROPPED_Tracks-1-3-4-5-2-F6_18,103.518,20.853,2008.536
+trackmaterun-Friendly220219-3,F14,friendly,/ trackmaterun-Friendly220219-3 FRIENDLYpiunder5mins3ADJUSTEDCROPPED-220219-3_Tracks-1-5-4-5-2-F0,84.321,23.851,1740.467
+trackmaterun-Friendly220219-4,F15,friendly,/ trackmaterun-Friendly220219-4 FRIENDLYpiover5mins_useADJUSTEDCROPPED_Tracks-1-4-4-5-2-F9_91,65.181,21.592,1205.727
+trackmaterun-Friendly220219-5,F16,friendly,/ trackmaterun-Friendly220219-5 FRIENDLYpiunder5mins2_alreadydonebutcellattoprightANOTHER-ADJUSTEDCROPPED_Tracks-1-4-4-5-2-F5_9,31.416,16.166,369.762
+trackmaterun-Friendly220219-2,F17,friendly,/ trackmaterun-Friendly220219-2 FRIENDLYpiunder5mins2ADJUSTEDCROPPED-220219-2_Tracks-1-4-4-5-2-F6_36,57.193,23.426,1295.446
+trackmaterun-Friendly060419-3,F18,friendly,/ trackmaterun-Friendly060419-3 FRIENDLYjustover5min_usebutbumpuppiforcropping-ADJUSTEDCROPPED_Tracks-1-4-4-5-2-F6_33,66.519,22.747,1433.612
+trackmaterun-Friendly060419-2,F19,friendly,/ trackmaterun-Friendly060419-2 FRIENDLYunder5minADJUSTEDCROPPED_2-060419_Tracks-1-5-4-5-2-F6_2,38.244,19.358,655.154
