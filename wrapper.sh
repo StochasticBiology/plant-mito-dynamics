@@ -15,4 +15,4 @@ Rscript msh1MSGraphs-noFR.R
 
 #If you'd like the cell size (length/width/area) plots and statistics, use
 
-Rscript cellSizesQuantify.R
+Rscript CellSizesQuantify.R
