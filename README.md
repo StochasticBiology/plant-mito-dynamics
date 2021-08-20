@@ -19,12 +19,14 @@ Before running, ensure you have access to:
     - rstatix
     - ggpubr
 
-## Run all trajectory data through analysis script, generate graphs and gather statistics using
+## Wrapper script
+
+Run all trajectory data through analysis script, generate graphs and gather statistics using the bash script
 
 ```sh
 ./wrapper.sh
 ```
-n.b. uses threshold distance of 1.6µm
+(n.b. uses threshold distance of 1.6µm)
 
 or go through file by file (below)
 
@@ -54,7 +56,7 @@ Threshold here means the encounter threshold. We used <=1.6µm to count as an en
 Graph plotting and statistical analysis was done using scripts
  - `msh1MSGraphs.R` For Figure 4, S6, S7
  - `msh1MSGraphs-noFR.R` For Figure 2, 3
- - `CellSizesQuantify.R` For Figure S5, uses `CellSizesQuantify.csv` as input
+ - `CellSizesQuantify.R` For Figure S5, uses `cellSizes/CellSizesQuantify.csv` as input
 
 ## Video Data
 
