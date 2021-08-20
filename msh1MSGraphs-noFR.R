@@ -21,9 +21,9 @@ statsList<-NULL
 speedList<-NULL
 coloctimeList<-NULL
 for(i in 1:length(dataFrameNames)){
-  statsList[i]<-list(read.csv(paste(dataFrameNames[i],"-stats.csv",sep="")))
-  speedList[i]<-list(read.csv(paste(dataFrameNames[i],"-speeds.csv",sep="")))
-  coloctimeList[i]<-list(read.csv(paste(dataFrameNames[i],"-colocal-time.csv",sep="")))
+  statsList[i]<-list(read.csv(paste(dataFileNames[i],"-stats.csv",sep="")))
+  speedList[i]<-list(read.csv(paste(dataFileNames[i],"-speeds.csv",sep="")))
+  coloctimeList[i]<-list(read.csv(paste(dataFileNames[i],"-colocal-time.csv",sep="")))
 }
 
 #Kruskal Wallis testing
@@ -96,9 +96,9 @@ ggsave(paste("colocMeanPlot-noFR.pdf",sep=""),colocplot,width = 10, height=16, u
 
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#Mean Intermitochondrial distances at frames 10,50,100,110,115,118,119,120
+#Mean Intermitochondrial distances at frames 5,10,50,100,120
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-for(f in c(10,50,100,110,115,118,119,120)){
+for(f in c(5,10,50,100,120)){
   minDistslist<-NULL
   for(i in 1:length(dataFrameNames)){
     #get the value at chosen frame for the mean minimum distances,for all the input video data names
@@ -152,7 +152,7 @@ Fig2<-ggarrange(overalldistsplot, speedplot, colocplot, labels = c("A","B","C"),
                   nrow = 1,
                   ncol = 3 ,font.label = list(size = 25) )
 Fig2
-ggsave(paste("Figure2.svg",sep=""), Fig2, width = 30, height=13, units = "cm")
+ggsave(paste("Figure2.png",sep=""), Fig2, width = 30, height=13, units = "cm")
 
 
 
@@ -164,9 +164,9 @@ ggsave(paste("Figure2.svg",sep=""), Fig2, width = 30, height=13, units = "cm")
 #=================================
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#Mean Degree at frames 10,50,100,110,115,118,119,120
+#Mean Degree at frames 5,10,50,100,120
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-for(f in c(10,50,100,110,115,118,119,120)){
+for(f in c(5,10,50,100,120)){
   meanDegreelist<-NULL
   for(i in 1:length(dataFrameNames)){
     #get the value at chosen frame for the mean degree, for all the input video data names
@@ -190,10 +190,10 @@ for(f in c(10,50,100,110,115,118,119,120)){
 }
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#Mean network efficiency at frames 10,50,100,110,115,118,119,120
+#Mean network efficiency at frames 5,10,50,100,120
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-for(f in c(10,50,100,110,115,118,119,120)){
+for(f in c(5,10,50,100,120)){
   netEfflist<-NULL
   for(i in 1:length(dataFrameNames)){
     #get the value at chosen frame for the mean network efficiency,  for all the input video data names
@@ -217,10 +217,10 @@ for(f in c(10,50,100,110,115,118,119,120)){
 }
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#Network diameter at frames 10,50,100,110,115,118,119,120
+#Network diameter at frames 5,10,50,100,120
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-for(f in c(10,50,100,110,115,118,119,120)){
+for(f in c(5,10,50,100,120)){
   diamlist<-NULL
   for(i in 1:length(dataFrameNames)){
     #get the value at chosen frame for the mean network diameter, for all the input video data names
@@ -245,10 +245,10 @@ for(f in c(10,50,100,110,115,118,119,120)){
 
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#Network betweeness at frames 10,50,100,110,115,118,119,120
+#Network betweeness at frames 5,10,50,100,120
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-for(f in c(10,50,100,110,115,118,119,120)){
+for(f in c(5,10,50,100,120)){
   bclist<-NULL
   for(i in 1:length(dataFrameNames)){
     #get the value at chosen frame for the mean network diameter, for all the input video data names
@@ -283,15 +283,15 @@ Fig3<-ggarrange(degreeplot, efficiencyplot, diameterplot ,bcplot, labels = c("A"
                      nrow = 1,
                      ncol = 4 ,font.label = list(size = 25)  )
 Fig3
-ggsave(paste("Figure3.svg",sep=""), Fig3, width = 35, height=13, units = "cm")
+ggsave(paste("Figure3.png",sep=""), Fig3, width = 35, height=13, units = "cm")
 
 
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#Connected components at frames 10,50,100,110,115,118,119,120
+#Connected components at frames 5,10,50,100,120
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-for(f in c(10,50,100,110,115,118,119,120)){
+for(f in c(5,10,50,100,120)){
   ccmlist<-NULL
   for(i in 1:length(dataFrameNames)){
     #get the value at chosen frame for the mean network diameter, for all the input video data names

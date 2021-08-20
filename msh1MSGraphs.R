@@ -10,7 +10,7 @@ library(ggpubr)
 dataFileNames<-c(rep(paste("mtgfp-rawtrajectories/mtGFP-",1:18,".xml",sep=""),1:18,18),rep(paste("msh1-rawtrajectories/MSH-",1:28,".xml",sep=""),1:28,28),rep(paste("friendly-rawtrajectories/Friendly-",1:19,".xml",sep=""),1:19,19))
 
 #list all names of videos
-dataFrameNames<-c(rep(paste("mtGFP",1:18,sep=""),1:18,18),rep(paste("MSH",1:28,sep=""),1:28,28),rep(paste("Friendly",1:19,sep=""),1:19,19))
+dataFrameNames<-c(rep(paste("mtGFP",1:18,sep=""),1:18,18),rep(paste("MSH",1:28,sep=""),1:28,28),rep(paste("F",1:19,sep=""),1:19,19))
 
 #list their scientific names
 type<-c(rep("mtGFP",length(grep("GFP[0-9]",dataFrameNames))),rep("mtGFP-msh1",length(grep("MSH[0-9]",dataFrameNames))),rep("friendly",length(grep("F[0-9]",dataFrameNames)))) 
@@ -41,11 +41,13 @@ mypalette = c("#0073C2FF", "#00A36C", "#868686FF")
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #Mean speed
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 speedMeanlist<-NULL
 for(i in 1:length(dataFrameNames)){
   #The first value in the data frame is the mean
   speedMeanlist<-c(speedMeanlist,speedList[[i]]$x[1])
 }
+
 speedm<-data.frame(type,speedMeanlist)
 colnames(speedm)<-c("Type","speedMean")
 
@@ -147,9 +149,9 @@ if(kt$p.value < 0.05){
 
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#Mean Intermitochondrial distances at frames 10,50,100,110,115,118,119,120
+#Mean Intermitochondrial distances at frames 5,10,50,100,120
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-for(f in c(5,10,25,50,75,100,110,115,118,119,120)){
+for(f in c(5,10,50,100,120)){
   minDistslist<-NULL
   for(i in 1:length(dataFrameNames)){
     #get the value at chosen frame for the mean minimum distances,for all the input video data names
@@ -259,11 +261,11 @@ if(kt$p.value < 0.05){
 
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#Mean Degree at frames 10,50,100,120
+#Mean Degree at chosen frames
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-degplots<-function(){
+degplots<-function(frames){
   listdeg<-c()
- for(f in c(10,50,100,120)){
+ for(f in frames){
     meanDegreelist<-NULL
     for(i in 1:length(dataFrameNames)){
       #get the value at chosen frame for the mean degree, for all the input video data names
@@ -319,21 +321,21 @@ degplots<-function(){
   return(listdeg)
 }
 
-#only want frames 10,50,100, so need to crop the last plot off in post-prod. 
-deg <-ggarrange(plotlist=degplots(), labels = c("A.i","A.ii","A.iii"),
-                nrow = 4,
+#only want frames 10,50,100, so just enter those. 
+deg <-ggarrange(plotlist=degplots(c(10,50,100)), labels = c("A.i","A.ii","A.iii"),
+                nrow = 3,
                 ncol = 1 ,font.label = list(size = 18))
 deg
-ggsave(paste("FigureS7PartA.svg",sep=""),deg,width = 10, height=45, units = "cm")
+ggsave(paste("FigureS7PartA.png",sep=""),deg,width = 10, height=45, units = "cm")
 
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#Mean network efficiency at frames 10,50,100,120
+#Mean network efficiency at chosen frames 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-effplots<-function(){
+effplots<-function(frames){
   listeff<-c()
-  for(f in c(10,50,100,120)){
+  for(f in frames){
     netEfflist<-NULL
     for(i in 1:length(dataFrameNames)){
       #get the value at chosen frame for the mean network efficiency,  for all the input video data names
@@ -391,22 +393,22 @@ effplots<-function(){
 }
 
 
-#only want frames 10,50,100, so need to crop the last plot off in post-prod. 
-eff <-ggarrange(plotlist=effplots(), labels = c("B.i","B.ii","B.iii"),
-                nrow = 4,
+#only want frames 10,50,100, so just enter those. 
+eff <-ggarrange(plotlist=effplots(c(10,50,100)), labels = c("B.i","B.ii","B.iii"),
+                nrow = 3,
                 ncol = 1 ,font.label = list(size = 18))
 eff
-ggsave(paste("FigureS7PartB.svg",sep=""),eff,width = 10, height=45, units = "cm")
+ggsave(paste("FigureS7PartB.png",sep=""),eff,width = 10, height=45, units = "cm")
 
 
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#Network diameter at frames 10,50,100,120
+#Network diameter at chosen frames 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-diaplots<-function(){
+diaplots<-function(frames){
   listdia<-c()
-  for(f in c(10,50,100,120)){
+  for(f in frames){
     diamlist<-NULL
     for(i in 1:length(dataFrameNames)){
       #get the value at chosen frame for the mean network diameter, for all the input video data names
@@ -464,22 +466,22 @@ diaplots<-function(){
 }
 
 
-#only want frames 10,50,100, so need to crop the last plot off in post-prod. 
-dia <-ggarrange(plotlist=deffplots(), labels = c("C.i","C.ii","C.iii"),
-               nrow = 4,
+#only want frames 10,50,100, so just enter those. 
+dia <-ggarrange(plotlist=diaplots(c(10,50,100)), labels = c("C.i","C.ii","C.iii"),
+               nrow = 3,
                ncol = 1 ,font.label = list(size = 18))
 dia
-ggsave(paste("FigureS7PartC.svg",sep=""),dia,width = 10, height=45, units = "cm")
+ggsave(paste("FigureS7PartC.png",sep=""),dia,width = 10, height=45, units = "cm")
 
 
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#Network betweeness at frames 10,50,100,120
+#Network betweeness at chosen frames
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-bcplots<-function(){
+bcplots<-function(frames){
   listbc<-c()
-  for(f in c(10,50,100,120)){
+  for(f in frames){
     bclist<-NULL
     for(i in 1:length(dataFrameNames)){
       #get the value at chosen frame for the mean network diameter, for all the input video data names
@@ -536,12 +538,12 @@ bcplots<-function(){
   return(listbc)
 }
 
-#only want frames 10,50,100, so need to crop the last plot off in post-prod. 
-bc <-ggarrange(plotlist=bcplots(), labels = c("D.i","D.ii","D.iii"),
-              nrow = 4,
+#only want frames 10,50,100, so just enter those. 
+bc <-ggarrange(plotlist=bcplots(c(10,50,100)), labels = c("D.i","D.ii","D.iii"),
+              nrow = 3,
               ncol = 1 ,font.label = list(size = 18))
 bc
-ggsave(paste("FigureS7PartD.svg",sep=""),bc,width = 10, height=45, units = "cm")
+ggsave(paste("FigureS7PartD.png",sep=""),bc,width = 10, height=45, units = "cm")
 
 
 
@@ -549,19 +551,24 @@ ggsave(paste("FigureS7PartD.svg",sep=""),bc,width = 10, height=45, units = "cm")
 #Figure 4
 #~~~~~~~~~
 
-#These are sensitive plots as the social statistics plots rely on the final plot to come out of the above functions always being frame 120. 
-#If you change the frame value the function loops over, you need to be aware it changes this frame plotted below. 
-
 toprow<-ggarrange(overalldistsplot, speedplot, colocplot, labels = c("A","B","C"),
               nrow = 1,
               ncol = 3 ,font.label = list(size = 25) )
 
-bottomrow<-ggarrange(degreeplot, efficiencyplot, diameterplot ,bcplot, labels = c("D","E","F","G"),
-             nrow = 1,
-             ncol = 4 ,font.label = list(size = 25)  )
+#We just want frame 120 for these plots 
+#Has to be a long-winded format to avoid "Cannot convert object of class list into a grob."
+
+D<-ggarrange( plotlist=degplots(120))
+E<-ggarrange( plotlist=effplots(120) )
+FF<-ggarrange( plotlist=diaplots(120) )
+G<-ggarrange( plotlist=bcplots(120)  )
+
+bottomrow<-ggarrange(D,E,FF,G, labels = c("D","E","F","G"),
+          nrow = 1,
+          ncol = 4 ,font.label = list(size = 25) )
 
 fig4<-ggarrange(toprow,bottomrow, nrow=2, ncol=1)
-ggsave(paste("Figure4.svg",sep=""), fig4, width = 35, height=30, units = "cm")
+ggsave(paste("Figure4.png",sep=""), fig4, width = 35, height=30, units = "cm")
 
 
 
@@ -643,7 +650,7 @@ n <-ggarrange(plotlist=nodeplots(), labels = c("A.i","A.ii","A.iii","A.iv"),
               nrow = 1,
               ncol = 4 ,font.label = list(size = 18) , hjust=0.01 ,vjust=3)
 n
-ggsave(paste("NodeNumberPlotFramesTogether.svg",sep=""),n,width = 35, height=15, units = "cm")
+ggsave(paste("NodeNumberPlotFramesTogether.png",sep=""),n,width = 35, height=15, units = "cm")
 
 
 
@@ -715,5 +722,5 @@ e <-ggarrange(plotlist=edgeplots(), labels = c("B.i","B.ii","B.iii","B.iv"),
               nrow = 1,
               ncol = 4 ,font.label = list(size = 18) , hjust=0.01 ,vjust=3)
 e
-ggsave(paste("EdgeNumberPlotFramesTogether.svg",sep=""),e,width = 35, height=15, units = "cm")
+ggsave(paste("EdgeNumberPlotFramesTogether.png",sep=""),e,width = 35, height=15, units = "cm")
 
