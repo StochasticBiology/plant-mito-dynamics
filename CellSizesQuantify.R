@@ -6,7 +6,7 @@ library(ggplot2)
 library(rstatix)
 library(ggpubr)
 
-cellSizes<-read.csv("~/Documents/CellSizesQuantify.csv")
+cellSizes<-read.csv("cellSizes/CellSizesQuantify.csv")
 cellSizesTable<-data.frame(cellSizes$Type,cellSizes$Y..long.,as.numeric(cellSizes$X..short.),cellSizes$All.sizes.taken.from.ADJUSTEDCROPPED.videos)
 colnames(cellSizesTable)<-c("type","length","width","area" )
 
@@ -55,7 +55,7 @@ widthplot<-ggboxplot(cellSizesTable, x = "type", y = "width",
   #stat_pvalue_manual(pwc, label= "p = {p.adj}",step.increase = 0.05) + # Add pairwise comparisons p-value change height of label by vjust = -0.2
   stat_compare_means(label.y= max(cellSizesTable$width)+(max(cellSizesTable$width)/5))    # Add global p-value
 widthplot
-ggsave("~/Documents/CellWidthPlot.png",widthplot)
+ggsave("CellWidthPlot.png",widthplot)
 
 #length
 
@@ -71,7 +71,7 @@ lengthplot<-ggboxplot(cellSizesTable, x = "type", y = "length",
  # stat_pvalue_manual(pwc, label= "p = {p.adj}",step.increase = 0.05) + # Add pairwise comparisons p-value change height of label by vjust = -0.2
   stat_compare_means(label.y= max(cellSizesTable$length)+(max(cellSizesTable$length)/5))    # Add global p-value
 lengthplot
-ggsave("~/Documents/CelllengthPlot.png",lengthplot)
+ggsave("CelllengthPlot.png",lengthplot)
 
 #area
 
@@ -87,7 +87,7 @@ areaplot<-ggboxplot(cellSizesTable, x = "type", y = "area",
  # stat_pvalue_manual(pwc, label= "p = {p.adj}",step.increase = 0.09) + # Add pairwise comparisons p-value change height of label by vjust = -0.2
   stat_compare_means(label.y= max(cellSizesTable$area)+(max(cellSizesTable$area)/5))    # Add global p-value
 areaplot
-ggsave("~/Documents/CellareaPlot.png",areaplot,width = 10, height=16, units = "cm")
+ggsave("CellareaPlot.png",areaplot,width = 10, height=16, units = "cm")
 
 #______________________________________
 #^ This plot is Supplementary Figure 5

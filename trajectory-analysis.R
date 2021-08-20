@@ -169,7 +169,7 @@ for(frame.number in 1:maxt) {
   stats.frame = rbind(stats.frame, g.frame)
   # if we want to output the structure at this frame, do so
   if(frame.number %in% frames.to.plot | frame.number == maxt) {
-    pdf(paste("plot-", frame.number, "-", filename, ".pdf", sep=""))
+    pdf(paste(filename,"-plot-", frame.number, ".pdf", sep=""))
     plot(g, vertex.size=0, vertex.label=NA)
     dev.off()
   }

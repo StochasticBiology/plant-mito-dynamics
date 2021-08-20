@@ -6,77 +6,11 @@ library(ggplot2)
 library(rstatix)
 library(ggpubr)
 
-workingDirectory<-"~/Documents/PIPELINEnew/"
-setwd(workingDirectory)
-#Read in data names
-F1<-"friendly/friendly120vidbestADJUSTEDCROPPED-100918_Tracks-1-4-4-5-2-F6_9.xml"
-F10<-"friendly/FRIENDLYunder5minADJUSTEDCROPPED_1-060419_Tracks1-5-4-5-2-F1_32.xml"
-F11<-"friendly/friendly120vid_somemitosoutoffocus-ADJUSTEDCROPPED_Tracks-1-7-4-5-2-F6_81.xml"
-F12<-"friendly/Friendlyniceunderr5min-2-bonuscell-ADJUSTEDCROPPED_Tracks-1-3-4-5-2-F4_48.xml"
-F13<-"friendly/Friendly6_candeffousejustbumppi-ADJUSTEDCROPPED_Tracks-1-3-4-5-2-F6_18.xml"
-F14<-"friendly/FRIENDLYpiunder5mins3ADJUSTEDCROPPED-220219-3_Tracks-1-5-4-5-2-F0.xml"
-F15<-"friendly/FRIENDLYpiover5mins_useADJUSTEDCROPPED_Tracks-1-4-4-5-2-F9_91.xml"
-F16<-"friendly/FRIENDLYpiunder5mins2_alreadydonebutcellattoprightANOTHER-ADJUSTEDCROPPED_Tracks-1-4-4-5-2-F5_9.xml"
-F17<-"friendly/FRIENDLYpiunder5mins2ADJUSTEDCROPPED-220219-2_Tracks-1-4-4-5-2-F6_36.xml"
-F18<-"friendly/FRIENDLYjustover5min_usebutbumpuppiforcropping-ADJUSTEDCROPPED_Tracks-1-4-4-5-2-F6_33.xml"
-F19<-"friendly/FRIENDLYunder5minADJUSTEDCROPPED_2-060419_Tracks-1-5-4-5-2-F6_2.xml"
-F2<-"friendly/Friendly2_canusejustbumpupnoiseforPI-ADJUSTEDCROPPED_Tracks-1-4-4-5-2-F5_73.xml"
-F3<-"friendly/Friendly5_candeffousejustbumppi-ADJUSTEDCROPPED_Tracks-1-5-4-5-2-F0.xml"
-F4<-"friendly/Friendlyniceunderr5minADJUSTEDCROPPED-010319_Tracks-1-4-4-5-2-F5_54.xml"
-F5<-"friendly/Friendly4_canusejustbumpupnoiseforPI-ADJUSTEDCROPPED_Tracks-1-5-4-5-2-F9_24.xml"
-F6<-"friendly/FriendlyPInice200ADJUSTEDCROPPED-1-TRIMMEDTO120FRAMES_Tracks-1-4-4-5-2-F6_34.xml"
-F7<-"friendly/FRIENDLYpiunder5mins4_TWOMOREGREATONES-2-ADJUSTEDCROPPED_Tracks-1-4_5-4-5-2-F7_37.xml"
-F8<-"friendly/FRIENDLYpiunder5minsADJUSTEDCROPPED-220219-1_Tracks-1-4-4-5-2-F7_53.xml"
-F9<-"friendly/FRIENDLYpiunder5mins4_TWOMOREGREATONES-1-ADJUSTEDCROPPED_Tracks-1-4-4-5-2-F4_88.xml"
-GFP1<-"mtGFP/bigcellmanymitos-2-bonuscell-ADJUSTEDCROPPED_Tracks-1-1_5-4-5-2-F2_57.xml"
-GFP10<-"mtGFP/120notasstrongPI_use-ADJUSTEDCROPPED_Tracks-1-2_5-4-5-2-F5_08.xml"
-GFP11<-"mtGFP/C2-justmtGFPniceADJUSTED-3DDriftCorrectCROPPED-cell3_Tracks-1-5-4-5-2.xml"
-GFP12<-"mtGFP/C2-mtgfp-okADJUSTED-2x3DDriftCorrect-CROPPED-cell1_Tracks-1-4-4-5-2.xml"
-GFP13<-"mtGFP/C2-justmtGFPniceADJUSTED-3DDriftCorrectCROPPED-cell2_Tracks1-4-4-5-2.xml"
-GFP14<-"mtGFP/C2-mtgfp-bitdrifty-3DDriftCorrect-ADJUSTEDCROPPED_Tracks-1-6-4-5-2.xml"
-GFP15<-"mtGFP/C2-mtgfp-okADJUSTED-2x3DDriftCorrect-CROPPED-cell2_Tracks-1-5-4-5-2.xml"
-GFP16<-"mtGFP/C2-justmtGFPniceADJUSTED-3DDriftCorrectCROPPED-cell1_Tracks-1-5-4-5-2.xml"
-GFP17<-"mtGFP/C2-justmtGFPbitjumpy-3DDriftCorrect-ADJUSTEDCROPPED_Tracks-1-5-4-5-2.xml"
-GFP18<-"mtGFP/C2-mtgfp-niceADJUSTED-3DDriftCorrectCROPPED_Tracks-1-5-4-5-2.xml"
-GFP2<-"mtGFP/manycells120-2-bonuscell-ADJUSTEDCROPPED_Tracks-1-3-4-5-2-F6_86.xml"
-GFP3<-"mtGFP/nice120ADJUSTEDCROPPED_Tracks-1-5-4-5-2-F0.xml"
-GFP4<-"mtGFP/goodvid120ADJUSTEDCROPPED_Tracks-1-5-4-5-2-F5_77.xml"
-GFP5<-"mtGFP/manycells120ADJUSTED-RE-CROPPED_Tracks-1-4-4-5-2-F8_29.xml"
-GFP6<-"mtGFP/MiyoGFPjustover5min1-4zoomADJUSTEDCROPPED_Tracks-1-4-4-5-2-F7_66.xml"
-GFP7<-"mtGFP/mitoGFPslightlystressed-ADJUSTEDCROPPED-2-TRIMMEDTO120FRAMES_Tracks-1-4-4-5-2-F8_04.xml"
-GFP8<-"mtGFP/bigcellmanymitosADJUSTEDCROPPED-TOPMIS-CROPREMOVED_Tracks-1-4-4-5-2-F5_56.xml"
-GFP9<-"mtGFP/singlecell120_useADJUSTEDCROPPED_Tracks-1-4-4-5-5-F5_5.xml"
-MSH1<-"msh1/C2-msh1-smallcells-ADJUSTEDCROPPED-cell1_Tracks-0_8-6-4-5-2.xml"
-MSH10<-"msh1/C2-line11-9-2-good2ADJUSTEDCROPPED_Tracks-1-3-4-5-2-F9.xml"
-MSH11<-"msh1/C2-msh1-drifty-Correct3DDrift-ADJUSTEDCROPPED-cell1_Tracks-1-4-4-5-2.xml"
-MSH12<-"msh1/C2-msh1-loadscells-3DDriftCorrectADJUSTEDCROPPED-cell1_Tracks-1-7-3-4-2-F8_43.xml"
-MSH13<-"msh1/C2-msh1bitjumpy2ADJUSTEDCROPPED-cell2_Tracks_1_4_4_5_2.xml"
-MSH14<-"msh1/C2-msh1-smallcells-ADJUSTEDCROPPED-cell2_Tracks-0_8-6-3-5-2.xml"
-MSH15<-"msh1/C2-msh1-manycellsniceADJUSTEDCROPPED-cell2_Tracks-0_8-6-4-5-2-F6_9.xml"
-MSH16<-"msh1/C2-msh1-alright-Correct3DDrift-ADJUSTEDCROPPED-cell2_Tracks-1-5-4-5-2.xml"
-MSH17<-"msh1/C2-line11-9-2-good2ADJUSTEDCROPPED-cell3_Tracks-1-4-4-5-2.xml"
-MSH18<-"msh1/C2-msh1-greatbutdrifty-Correct3DDriftTWICEADJUSTEDCROPPED_Tracks-1-4-4-5-2.xml"
-MSH19<-"msh1/C2-msh1nicebutreallyrjumpyADJUSTEDCROPPED_Tracks-1-5-4-5-2.xml"
-MSH2<-"msh1/C2-msh1bitjumpy2ADJUSTEDCROPPED-cell1_Tracks_1_4_4_5_2.xml"
-MSH20<-"msh1/C2-msh1bitjumpyADJUSTEDCROPPED-cell2_Tracks_1_4_4_5_2.xml"
-MSH21<-"msh1/C2-msh1-justoneADJUSTEDCROPPED_Tracks1-4-4-5-2.xml"
-MSH22<-"msh1/C2-msh1-middle-Correct3DDrift-ADJUSTEDCROPPED_Tracks-1-4-4-5-2.xml"
-MSH23<-"msh1/C2-line11-9-2-good2ADJUSTEDCROPPED-cell2_Tracks-1-4-4-5-2.xml"
-MSH24<-"msh1/C2-msh1-loadscells-3DDriftCorrectADJUSTEDCROPPED-cell5_Tracks-1-6-3-4-2.xml"
-MSH25<-"msh1/C2-msh1-loadscells-3DDriftCorrectADJUSTEDCROPPED-cell2_Tracks-0_8-8-4-5-2-F9_7.xml"
-MSH26<-"msh1/C2-msh1-drifty-Correct3DDrift-ADJUSTEDCROPPED-cell2_Tracks-1-4-4-5-2.xml"
-MSH27<-"msh1/C2-msh1-loadscells-3DDriftCorrectADJUSTEDCROPPED-cell3_Tracks-0_8-5-4-5-2.xml"
-MSH28<-"msh1/C2-msh1-loadscells-3DDriftCorrectADJUSTEDCROPPED-cell4_Tracks-1-6-4-5-2.xml"
-MSH3<-"msh1/C2-msh1-alright-Correct3DDrift-ADJUSTEDCROPPED-cell1_Tracks-0_8-4-4-5-2.xml"
-MSH4<-"msh1/C2-msh1-manycellsniceADJUSTEDCROPPED-cell1_Tracks-1-5-4-5-2.xml"
-MSH5<-"msh1/C2-msh1bitjumpyADJUSTEDCROPPED-cell1_Tracks-1_4_4_5_2.xml"
-MSH6<-"msh1/C2-line11-9-2-goodbitjumpyADJUSTEDCROPPED_Tracks-1-4-4-5-2.xml"
-MSH7<-"msh1/C2-msh1-niceADJUSTEDCROPPED_Tracks-1-6-4-5-3-F7_15.xml"
-MSH8<-"msh1/C2-msh1-ratherjumpy-ADJUSTEDCROPPED_Tracks-1-4-4-5-2.xml"
-MSH9<-"msh1/C2-line11-9-2-goodbitjumpy2ADJUSTEDCROPPED_Tracks-1-4-4-5-2.xml"
+#list all names of directories
+dataFileNames<-c(rep(paste("mtgfp-rawtrajectories/mtGFP-",1:18,".xml",sep=""),1:18,18),rep(paste("msh1-rawtrajectories/MSH-",1:28,".xml",sep=""),1:28,28),rep(paste("friendly-rawtrajectories/Friendly-",1:19,".xml",sep=""),1:19,19))
 
 #list all names of videos
-dataFrameNames<-c(rep(paste("GFP",1:18,sep=""),1:18,18),rep(paste("MSH",1:28,sep=""),1:28,28),rep(paste("F",1:19,sep=""),1:19,19))
+dataFrameNames<-c(rep(paste("mtGFP",1:18,sep=""),1:18,18),rep(paste("MSH",1:28,sep=""),1:28,28),rep(paste("Friendly",1:19,sep=""),1:19,19))
 
 #list their scientific names
 type<-c(rep("mtGFP",length(grep("GFP[0-9]",dataFrameNames))),rep("mtGFP-msh1",length(grep("MSH[0-9]",dataFrameNames))),rep("friendly",length(grep("F[0-9]",dataFrameNames)))) 
@@ -87,9 +21,9 @@ statsList<-NULL
 speedList<-NULL
 coloctimeList<-NULL
 for(i in 1:length(dataFrameNames)){
-  statsList[i]<-list(read.csv(paste(mget(dataFrameNames[i]),"-stats.csv",sep="")))
-  speedList[i]<-list(read.csv(paste(mget(dataFrameNames[i]),"-speeds.csv",sep="")))
-  coloctimeList[i]<-list(read.csv(paste(mget(dataFrameNames[i]),"-colocal-time.csv",sep="")))
+  statsList[i]<-list(read.csv(paste(dataFileNames[i],"-stats.csv",sep="")))
+  speedList[i]<-list(read.csv(paste(dataFileNames[i],"-speeds.csv",sep="")))
+  coloctimeList[i]<-list(read.csv(paste(dataFileNames[i],"-colocal-time.csv",sep="")))
 }
 
 #Kruskal Wallis testing
@@ -138,8 +72,8 @@ if(kt$p.value < 0.05){
     theme(text = element_text(size = 10))
   speedplot
   
-  #ggsave(paste(workingDirectory ,"speedMeanPlot.png",sep=""),speedplot,width = 10, height=16, units = "cm")
-  #ggsave(paste(workingDirectory ,"speedMeanPlot.pdf",sep=""),speedplot,width = 10, height=16, units = "cm")
+  ggsave(paste("speedMeanPlot.png",sep=""),speedplot,width = 10, height=16, units = "cm")
+  ggsave(paste("speedMeanPlot.pdf",sep=""),speedplot,width = 10, height=16, units = "cm")
   
 } else {
   #do not include the post-hoc analysis
@@ -150,8 +84,8 @@ if(kt$p.value < 0.05){
     theme(text = element_text(size = 10))
   speedplot
   
-  #ggsave(paste(workingDirectory ,"speedMeanPlot.png",sep=""),speedplot,width = 10, height=16, units = "cm")
-  #ggsave(paste(workingDirectory ,"speedMeanPlot.pdf",sep=""),speedplot,width = 10, height=16, units = "cm")
+  ggsave(paste("speedMeanPlot.png",sep=""),speedplot,width = 10, height=16, units = "cm")
+  ggsave(paste("speedMeanPlot.pdf",sep=""),speedplot,width = 10, height=16, units = "cm")
   
 }
 
@@ -192,8 +126,8 @@ if(kt$p.value < 0.05){
     theme(text = element_text(size = 10))
   colocplot
   
-  #ggsave(paste(workingDirectory ,"colocMeanPlot.png",sep=""),colocplot,width = 10, height=16, units = "cm")
-  #ggsave(paste(workingDirectory ,"colocMeanPlot.pdf",sep=""),colocplot,width = 10, height=16, units = "cm")
+  ggsave(paste("colocMeanPlot.png",sep=""),colocplot,width = 10, height=16, units = "cm")
+  ggsave(paste("colocMeanPlot.pdf",sep=""),colocplot,width = 10, height=16, units = "cm")
   
 } else {
   #do not include the post-hoc analysis
@@ -204,8 +138,8 @@ if(kt$p.value < 0.05){
     theme(text = element_text(size = 10))
   colocplot
   
-  #ggsave(paste(workingDirectory ,"colocMeanPlot.png",sep=""),colocplot,width = 10, height=16, units = "cm")
-  #ggsave(paste(workingDirectory ,"colocMeanPlot.pdf",sep=""),colocplot,width = 10, height=16, units = "cm")
+  ggsave(paste("colocMeanPlot.png",sep=""),colocplot,width = 10, height=16, units = "cm")
+  ggsave(paste("colocMeanPlot.pdf",sep=""),colocplot,width = 10, height=16, units = "cm")
   
 }
 
@@ -247,8 +181,8 @@ for(f in c(5,10,25,50,75,100,110,115,118,119,120)){
       theme(text = element_text(size = 10))
     distsplot
     
-    #ggsave(paste(workingDirectory ,"distsMeanPlotFrame",f,".png",sep=""),distsplot,width = 10, height=16, units = "cm")
-    #ggsave(paste(workingDirectory ,"distsMeanPlotFrame",f,".pdf",sep=""),distsplot,width = 10, height=16, units = "cm")
+    ggsave(paste("distsMeanPlotFrame",f,".png",sep=""),distsplot,width = 10, height=16, units = "cm")
+    ggsave(paste("distsMeanPlotFrame",f,".pdf",sep=""),distsplot,width = 10, height=16, units = "cm")
 
   } else {
     #do not include the post-hoc analysis
@@ -259,8 +193,8 @@ for(f in c(5,10,25,50,75,100,110,115,118,119,120)){
       theme(text = element_text(size = 10))
     distsplot
     
-    #ggsave(paste(workingDirectory ,"distsMeanPlotFrame",f,".png",sep=""),distsplot,width = 10, height=16, units = "cm")
-    #ggsave(paste(workingDirectory ,"distsMeanPlotFrame",f,".pdf",sep=""),distsplot,width = 10, height=16, units = "cm")
+    ggsave(paste("distsMeanPlotFrame",f,".png",sep=""),distsplot,width = 10, height=16, units = "cm")
+    ggsave(paste("distsMeanPlotFrame",f,".pdf",sep=""),distsplot,width = 10, height=16, units = "cm")
     
   }
 }
@@ -299,8 +233,8 @@ if(kt$p.value < 0.05){
     theme(text = element_text(size = 10))
   overalldistsplot
   
-  #ggsave(paste(workingDirectory ,"distsMeanofMeansPlot.png",sep=""),overalldistsplot,width = 10, height=16, units = "cm")
-  #ggsave(paste(workingDirectory ,"distsMeanofMeansPlot.pdf",sep=""),overalldistsplot,width = 10, height=16, units = "cm")
+  ggsave(paste("distsMeanofMeansPlot.png",sep=""),overalldistsplot,width = 10, height=16, units = "cm")
+  ggsave(paste("distsMeanofMeansPlot.pdf",sep=""),overalldistsplot,width = 10, height=16, units = "cm")
   
 } else {
   #do not include the post-hoc analysis
@@ -311,8 +245,8 @@ if(kt$p.value < 0.05){
     theme(text = element_text(size = 10))
   overalldistsplot
   
-  #ggsave(paste(workingDirectory ,"distsMeanofMeansPlot.png",sep=""),overalldistsplot,width = 10, height=16, units = "cm")
-  #ggsave(paste(workingDirectory ,"distsMeanofMeansPlot.pdf",sep=""),overalldistsplot,width = 10, height=16, units = "cm")
+  ggsave(paste("distsMeanofMeansPlot.png",sep=""),overalldistsplot,width = 10, height=16, units = "cm")
+  ggsave(paste("distsMeanofMeansPlot.pdf",sep=""),overalldistsplot,width = 10, height=16, units = "cm")
   
 }
 
@@ -361,8 +295,8 @@ degplots<-function(){
         theme(text = element_text(size = 10))
       degreeplot
       
-      #ggsave(paste(workingDirectory ,"degreeMeansPlotFrame",f,".png",sep=""),degreeplot,width = 10, height=16, units = "cm")
-      #ggsave(paste(workingDirectory ,"degreeMeansPlotFrame",f,".pdf",sep=""),degreeplot,width = 10, height=16, units = "cm")
+      ggsave(paste("degreeMeansPlotFrame",f,".png",sep=""),degreeplot,width = 10, height=16, units = "cm")
+      ggsave(paste("degreeMeansPlotFrame",f,".pdf",sep=""),degreeplot,width = 10, height=16, units = "cm")
       
       listdeg <- c(listdeg, list(degreeplot))
       
@@ -375,8 +309,8 @@ degplots<-function(){
         theme(text = element_text(size = 10))
       degreeplot
       
-      #ggsave(paste(workingDirectory ,"degreeMeansPlotFrame",f,".png",sep=""),degreeplot,width = 10, height=16, units = "cm")
-      #ggsave(paste(workingDirectory ,"degreeMeansPlotFrame",f,".pdf",sep=""),degreeplot,width = 10, height=16, units = "cm")
+      ggsave(paste("degreeMeansPlotFrame",f,".png",sep=""),degreeplot,width = 10, height=16, units = "cm")
+      ggsave(paste("degreeMeansPlotFrame",f,".pdf",sep=""),degreeplot,width = 10, height=16, units = "cm")
       
       listdeg <- c(listdeg, list(degreeplot))
       
@@ -390,7 +324,7 @@ deg <-ggarrange(plotlist=degplots(), labels = c("A.i","A.ii","A.iii"),
                 nrow = 4,
                 ncol = 1 ,font.label = list(size = 18))
 deg
-ggsave(paste(workingDirectory ,"FigureS7PartA.svg",sep=""),deg,width = 10, height=45, units = "cm")
+ggsave(paste("FigureS7PartA.svg",sep=""),deg,width = 10, height=45, units = "cm")
 
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -432,8 +366,8 @@ effplots<-function(){
         theme(text = element_text(size = 10))
       efficiencyplot
       
-      #ggsave(paste(workingDirectory ,"efficiencyMeansPlotFrame",f,".png",sep=""),efficiencyplot,width = 10, height=16, units = "cm")
-      #ggsave(paste(workingDirectory ,"efficiencyMeansPlotFrame",f,".pdf",sep=""),efficiencyplot,width = 10, height=16, units = "cm")
+      ggsave(paste("efficiencyMeansPlotFrame",f,".png",sep=""),efficiencyplot,width = 10, height=16, units = "cm")
+      ggsave(paste("efficiencyMeansPlotFrame",f,".pdf",sep=""),efficiencyplot,width = 10, height=16, units = "cm")
       
       listeff <- c(listeff, list(efficiencyplot))
       
@@ -446,8 +380,8 @@ effplots<-function(){
         theme(text = element_text(size = 10))
       efficiencyplot
       
-      #ggsave(paste(workingDirectory ,"efficiencyMeansPlotFrame",f,".png",sep=""),efficiencyplot,width = 10, height=16, units = "cm")
-      #ggsave(paste(workingDirectory ,"efficiencyMeansPlotFrame",f,".pdf",sep=""),efficiencyplot,width = 10, height=16, units = "cm")
+      ggsave(paste("efficiencyMeansPlotFrame",f,".png",sep=""),efficiencyplot,width = 10, height=16, units = "cm")
+      ggsave(paste("efficiencyMeansPlotFrame",f,".pdf",sep=""),efficiencyplot,width = 10, height=16, units = "cm")
       
       listeff <- c(listeff, list(efficiencyplot))
       
@@ -462,7 +396,7 @@ eff <-ggarrange(plotlist=effplots(), labels = c("B.i","B.ii","B.iii"),
                 nrow = 4,
                 ncol = 1 ,font.label = list(size = 18))
 eff
-ggsave(paste(workingDirectory ,"FigureS7PartB.svg",sep=""),eff,width = 10, height=45, units = "cm")
+ggsave(paste("FigureS7PartB.svg",sep=""),eff,width = 10, height=45, units = "cm")
 
 
 
@@ -505,8 +439,8 @@ diaplots<-function(){
         theme(text = element_text(size = 10))
       diameterplot
       
-      #ggsave(paste(workingDirectory ,"diameterPlotFrame",f,".png",sep=""),diameterplot,width = 10, height=16, units = "cm")
-      #ggsave(paste(workingDirectory ,"diameterPlotFrame",f,".pdf",sep=""),diameterplot,width = 10, height=16, units = "cm")
+      ggsave(paste("diameterPlotFrame",f,".png",sep=""),diameterplot,width = 10, height=16, units = "cm")
+      ggsave(paste("diameterPlotFrame",f,".pdf",sep=""),diameterplot,width = 10, height=16, units = "cm")
       
       listdia <- c(listdia, list(diameterplot))
       
@@ -519,8 +453,8 @@ diaplots<-function(){
         theme(text = element_text(size = 10))
       diameterplot
       
-      #ggsave(paste(workingDirectory ,"diameterPlotFrame",f,".png",sep=""),diameterplot,width = 10, height=16, units = "cm")
-      #ggsave(paste(workingDirectory ,"diameterPlotFrame",f,".pdf",sep=""),diameterplot,width = 10, height=16, units = "cm")
+      ggsave(paste("diameterPlotFrame",f,".png",sep=""),diameterplot,width = 10, height=16, units = "cm")
+      ggsave(paste("diameterPlotFrame",f,".pdf",sep=""),diameterplot,width = 10, height=16, units = "cm")
       
       listdia <- c(listdia, list(diameterplot))
       
@@ -535,7 +469,7 @@ dia <-ggarrange(plotlist=deffplots(), labels = c("C.i","C.ii","C.iii"),
                nrow = 4,
                ncol = 1 ,font.label = list(size = 18))
 dia
-ggsave(paste(workingDirectory ,"FigureS7PartC.svg",sep=""),dia,width = 10, height=45, units = "cm")
+ggsave(paste("FigureS7PartC.svg",sep=""),dia,width = 10, height=45, units = "cm")
 
 
 
@@ -578,8 +512,8 @@ bcplots<-function(){
         theme(text = element_text(size = 10))
       bcplot
       
-      #ggsave(paste(workingDirectory ,"bcPlotFrame",f,".png",sep=""),bcplot,width = 10, height=16, units = "cm")
-      #ggsave(paste(workingDirectory ,"bcPlotFrame",f,".pdf",sep=""),bcplot,width = 10, height=16, units = "cm")
+      ggsave(paste("bcPlotFrame",f,".png",sep=""),bcplot,width = 10, height=16, units = "cm")
+      ggsave(paste("bcPlotFrame",f,".pdf",sep=""),bcplot,width = 10, height=16, units = "cm")
       
       listbc <- c(listbc, list(bcplot))
       
@@ -592,8 +526,8 @@ bcplots<-function(){
         theme(text = element_text(size = 10))
       bcplot
       
-      #ggsave(paste(workingDirectory ,"bcPlotFrame",f,".png",sep=""),bcplot,width = 10, height=16, units = "cm")
-      #ggsave(paste(workingDirectory ,"bcPlotFrame",f,".pdf",sep=""),bcplot,width = 10, height=16, units = "cm")
+      ggsave(paste("bcPlotFrame",f,".png",sep=""),bcplot,width = 10, height=16, units = "cm")
+      ggsave(paste("bcPlotFrame",f,".pdf",sep=""),bcplot,width = 10, height=16, units = "cm")
       
       listbc <- c(listbc, list(bcplot))
       
@@ -607,7 +541,7 @@ bc <-ggarrange(plotlist=bcplots(), labels = c("D.i","D.ii","D.iii"),
               nrow = 4,
               ncol = 1 ,font.label = list(size = 18))
 bc
-ggsave(paste(workingDirectory ,"FigureS7PartD.svg",sep=""),bc,width = 10, height=45, units = "cm")
+ggsave(paste("FigureS7PartD.svg",sep=""),bc,width = 10, height=45, units = "cm")
 
 
 
@@ -627,7 +561,7 @@ bottomrow<-ggarrange(degreeplot, efficiencyplot, diameterplot ,bcplot, labels = 
              ncol = 4 ,font.label = list(size = 25)  )
 
 fig4<-ggarrange(toprow,bottomrow, nrow=2, ncol=1)
-ggsave(paste(workingDirectory ,"Figure4.svg",sep=""), fig4, width = 35, height=30, units = "cm")
+ggsave(paste("Figure4.svg",sep=""), fig4, width = 35, height=30, units = "cm")
 
 
 
@@ -681,8 +615,8 @@ nodeplots<-function(){
       
       nodeplot
       
-      #ggsave(paste(workingDirectory ,"NodeNumberPlotFrame",f,".png",sep=""),nodeplot,width = 10, height=16, units = "cm")
-      #ggsave(paste(workingDirectory ,"NodeNumberPlotFrame",f,".pdf",sep=""),nodeplot,width = 10, height=16, units = "cm")
+      ggsave(paste("NodeNumberPlotFrame",f,".png",sep=""),nodeplot,width = 10, height=16, units = "cm")
+      ggsave(paste("NodeNumberPlotFrame",f,".pdf",sep=""),nodeplot,width = 10, height=16, units = "cm")
       
       listn <- c(listn, list(nodeplot))
       
@@ -695,8 +629,8 @@ nodeplots<-function(){
         theme(text = element_text(size = 10))
       nodeplot
       
-      #ggsave(paste(workingDirectory ,"NodeNumberPlotFrame",f,".png",sep=""),nodeplot,width = 10, height=16, units = "cm")
-      #ggsave(paste(workingDirectory ,"NodeNumberPlotFrame",f,".pdf",sep=""),nodeplot,width = 10, height=16, units = "cm")
+      ggsave(paste("NodeNumberPlotFrame",f,".png",sep=""),nodeplot,width = 10, height=16, units = "cm")
+      ggsave(paste("NodeNumberPlotFrame",f,".pdf",sep=""),nodeplot,width = 10, height=16, units = "cm")
       
       listn <- c(listn, list(nodeplot))
     }
@@ -709,7 +643,7 @@ n <-ggarrange(plotlist=nodeplots(), labels = c("A.i","A.ii","A.iii","A.iv"),
               nrow = 1,
               ncol = 4 ,font.label = list(size = 18) , hjust=0.01 ,vjust=3)
 n
-ggsave(paste(workingDirectory ,"NodeNumberPlotFramesTogether.svg",sep=""),n,width = 35, height=15, units = "cm")
+ggsave(paste("NodeNumberPlotFramesTogether.svg",sep=""),n,width = 35, height=15, units = "cm")
 
 
 
@@ -752,8 +686,8 @@ edgeplots<-function(){
         theme(text = element_text(size = 10))
       edgeplot
       
-      #ggsave(paste(workingDirectory ,"EdgeNumberPlotFrame",f,".png",sep=""),edgeplot,width = 10, height=16, units = "cm")
-      #ggsave(paste(workingDirectory ,"EdgeNumberPlotFrame",f,".pdf",sep=""),edgeplot,width = 10, height=16, units = "cm")
+      ggsave(paste("EdgeNumberPlotFrame",f,".png",sep=""),edgeplot,width = 10, height=16, units = "cm")
+      ggsave(paste("EdgeNumberPlotFrame",f,".pdf",sep=""),edgeplot,width = 10, height=16, units = "cm")
       
       liste <- c(liste, list(edgeplot))
       
@@ -766,8 +700,8 @@ edgeplots<-function(){
         theme(text = element_text(size = 10))
       edgeplot
       
-      #ggsave(paste(workingDirectory ,"EdgeNumberPlotFrame",f,".png",sep=""),edgeplot,width = 10, height=16, units = "cm")
-      #ggsave(paste(workingDirectory ,"EdgeNumberPlotFrame",f,".pdf",sep=""),edgeplot,width = 10, height=16, units = "cm")
+      ggsave(paste("EdgeNumberPlotFrame",f,".png",sep=""),edgeplot,width = 10, height=16, units = "cm")
+      ggsave(paste("EdgeNumberPlotFrame",f,".pdf",sep=""),edgeplot,width = 10, height=16, units = "cm")
       
       liste <- c(liste, list(edgeplot))
     }
@@ -781,5 +715,5 @@ e <-ggarrange(plotlist=edgeplots(), labels = c("B.i","B.ii","B.iii","B.iv"),
               nrow = 1,
               ncol = 4 ,font.label = list(size = 18) , hjust=0.01 ,vjust=3)
 e
-ggsave(paste(workingDirectory ,"EdgeNumberPlotFramesTogether.svg",sep=""),e,width = 35, height=15, units = "cm")
+ggsave(paste("EdgeNumberPlotFramesTogether.svg",sep=""),e,width = 35, height=15, units = "cm")
 
