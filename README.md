@@ -19,7 +19,23 @@ Before running, ensure you have access to:
     - rstatix
     - ggpubr
 
-## Wrapper script
+## General analysis
+
+The workhorse code -- which takes XML output from TrackMate [1] and computes and outputs physical and network statistics of collective mitochondrial motion -- is `trajectory-analysis.R`. For a detailed description of the analysis approach, see Chustecki et al. [2].
+
+To run, use:
+
+Rscript `trajectory-analysis.R` [input XML file] [threshold distance in µm] [any specific frame numbers for which to output graph plots]
+
+For example 
+
+```sh
+Rscript trajectory-analysis.R test.xml 1.6 1 50 100
+```
+
+would analyse `test.xml` using a 1.6µm distance as a threshold for encounters, and output specific plots for frames 1, 50, and 100.
+
+## Wrapper script for msh1 project
 
 Run all trajectory data through analysis script, generate graphs and gather statistics using the bash script
 
@@ -30,37 +46,26 @@ Run all trajectory data through analysis script, generate graphs and gather stat
 
 or go through file by file (below)
 
-## Analysis of experimental data
+## Experimental data for msh1 project
 
 You will find all raw trajectory files from TrackMate export in the subdirectories
 `mtgfp-rawtrajectories`
 `msh1-rawtrajectories`
 `friendly-rawtrajectories`
 
-The script to process trajectories, and export adjacency matrices, trajectories, summary statistics, mitochondrial colocalisation time and mitochondrial speeds is `trajectory-analysis.R`
-
-To run, use:
-
-Rscript `trajectory-analysis.R` [input XML file] [threshold distance in µm] [any frames for which to output graph plots]
-
-For example 
-
-```sh
-Rscript trajectory-analysis.R test.xml 1.6 1 50 100
-```
-
-Threshold here means the encounter threshold. We used <=1.6µm to count as an encounter between two mitochondria. 
-
-## Graph Plotting
+## Graph plotting for msh1 project
 
 Graph plotting and statistical analysis was done using scripts
  - `msh1MSGraphs.R` For Figure 4, S6, S7
  - `msh1MSGraphs-noFR.R` For Figure 2, 3
  - `CellSizesQuantify.R` For Figure S5, uses `cellSizes/CellSizesQuantify.csv` as input
 
-## Video Data
+## Video data for msh1 project
 
 All video data will be made available in subdirectories 
 - `mtgfp-videos`
 - `msh1-videos`
 - `friendly-videos`
+
+[1] https://imagej.net/plugins/trackmate/
+[2] https://www.sciencedirect.com/science/article/pii/S2405471221001332
