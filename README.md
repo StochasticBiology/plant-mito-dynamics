@@ -21,7 +21,7 @@ Before running, ensure you have access to:
 
 ## General analysis
 
-The workhorse code -- which takes XML output from TrackMate [1] and computes and outputs physical and network statistics of collective mitochondrial motion -- is `trajectory-analysis.R`. For a detailed description of the analysis approach, see Chustecki et al. [2].
+The workhorse code which takes XML output of tracked mitochondrial trajectories from TrackMate [1], and computes and outputs physical and network statistics of collective mitochondrial motion. This code is `trajectory-analysis.R`. For a detailed description of the analysis approach, see Chustecki et al. [2].
 
 To run, use:
 
@@ -66,6 +66,8 @@ All video data will be made available in subdirectories
 - `mtgfp-videos`
 - `msh1-videos`
 - `friendly-videos`
+
+## References
 
 [1] https://imagej.net/plugins/trackmate/
 [2] https://www.sciencedirect.com/science/article/pii/S2405471221001332
