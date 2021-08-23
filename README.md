@@ -1,7 +1,7 @@
 # Analysis of collective mitochondrial dynamics in plants
 
 
-Retrive a local copy with
+Retrieve a local copy with
 
 ```sh
 git clone https://github.com/StochasticBiology/plant-mito-dynamics.git
