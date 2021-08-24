@@ -21,7 +21,7 @@ Before running, ensure you have access to:
 
 ## General analysis
 
-The workhorse code which takes XML output of tracked mitochondrial trajectories from TrackMate [1], and computes and outputs physical and network statistics of collective mitochondrial motion. This code is `trajectory-analysis.R`. For a detailed description of the analysis approach, see Chustecki et al. [2].
+The workhorse code takes XML output of tracked mitochondrial trajectories from TrackMate [1], and computes and outputs physical and network statistics of collective mitochondrial motion. This code is `trajectory-analysis.R`. For a detailed description of the analysis approach, see Chustecki et al. [2].
 
 To run, use:
 
