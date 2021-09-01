@@ -287,35 +287,4 @@ ggsave(paste("Figure3.png",sep=""), Fig3, width = 35, height=13, units = "cm")
 
 
 
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#Connected components at frames 5,10,50,100,120
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-for(f in c(5,10,50,100,120)){
-  ccmlist<-NULL
-  for(i in 1:length(dataFrameNames)){
-    #get the value at chosen frame for the mean network diameter, for all the input video data names
-    ccmlist<-c(ccmlist,statsList[[i]]$cc.mean.size[f])
-  }
-  CCM<-data.frame(type,ccmlist)
-  colnames(CCM)<-c("Type","meannumberCC")
-  
-  CCM$Type <- factor(CCM$Type, levels = unique(CCM$Type))   #To be able to plot x axis in the order it appears in the data frame 
-  ggplot(CCM, aes(x=Type, y=meannumberCC)) + geom_dotplot(binaxis = "y", stackdir ="center") +  ggtitle(paste( "MitoGFP n=",length(grep("GFP[0-9]",dataFrameNames)), "      Msh1 n=", length(grep("MSH[0-9]",dataFrameNames)),"     friendly n=",length(grep("F[0-9]",dataFrameNames))))
-  
-  
-  ccmplot<-ggboxplot(CCM, x = "Type", y = "meannumberCC", color = "Type", palette = mypalette,   outlier.shape = NA) +  
-    geom_jitter(width = 0.2,aes(color = Type)) + ylab("Mean number connected components")  + scale_y_continuous(limits = c(0,NA)) +
-    stat_compare_means(label.y= max(CCM$meannumberCC)+(max(CCM$meannumberCC)/2.5))    # Add global p-value. Function does this automatically. label.y specification is positioning relative to axes
-  ccmplot
-  
-  ggsave(paste("ccmPlotFrame",f,"-noFR.png",sep=""),ccmplot,width = 10, height=16, units = "cm")
-  ggsave(paste("ccmPlotFrame",f,"-noFR.pdf",sep=""),ccmplot,width = 10, height=16, units = "cm")
-  
-  
-}
-
-
-
-
 

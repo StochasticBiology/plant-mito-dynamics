@@ -75,6 +75,9 @@ ggsave("CelllengthPlot.png",lengthplot)
 
 #area
 
+x$name <- factor(x$name, levels = x$name[order(x$val)])
+x$name  # notice the changed order of factor levels
+
 compare_means(area ~ type,  data = cellSizesTable, method = "kruskal.test")
 pwc<-cellSizesTable %>% dunn_test(area ~ type, p.adjust.method = "fdr") 
 
