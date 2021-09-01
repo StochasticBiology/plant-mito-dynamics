@@ -3,9 +3,9 @@
 
 # process command-line arguments
 # these are of the form
-# Rscript newPipelinev6.R [input XML file] [threshold] [any frames for which to output graph plots]
+# Rscript trajectory-analysis.R [input XML file] [threshold distance in microns] [any frames for which to output graph plots]
 # e.g.
-# Rscript newPipelinev6.R test.xml 1.6 1 50 100
+# Rscript trajectory-analysis.R test.xml 1.6 1 50 100
 
 message("Processing arguments...")
 
