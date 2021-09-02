@@ -62,7 +62,7 @@ Graph plotting and statistical analysis was done using scripts
 
 ## Video data for msh1 project
 
-All video data will be made available in subdirectories 
+All video data is available in subdirectories 
 - `mtgfp-videos`
 - `msh1-videos`
 - `friendly-videos`
