@@ -1,5 +1,8 @@
 # Analysis of collective mitochondrial dynamics in plants
 
+Note: This code base is a little complicated and contains some Mathematica code. For a streamlined pipeline for the extraction and analysis of these networks without proprietary software, consider https://github.com/StochasticBiology/mito-network-sharing .
+
+## Download
 
 Retrieve a local copy with
 
