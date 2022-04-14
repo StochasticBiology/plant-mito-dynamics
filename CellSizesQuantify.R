@@ -6,8 +6,8 @@ library(ggplot2)
 library(rstatix)
 library(ggpubr)
 
-cellSizes<-read.csv("cellSizes/CellSizesQuantify.csv")
-cellSizesTable<-data.frame(cellSizes$Type,cellSizes$Y..long.,as.numeric(cellSizes$X..short.),cellSizes$All.sizes.taken.from.ADJUSTEDCROPPED.videos)
+cellSizes<-read.csv("/Users/d1795494/Documents/GIT-plant-mito-dynamics/cellSizes/CellSizesQuantify.csv")
+cellSizesTable<-data.frame(cellSizes$Type,cellSizes$Y..long.,as.numeric(cellSizes$X..short.),cellSizes$Area.All.sizes.taken.from.ADJUSTEDCROPPED.videos)
 colnames(cellSizesTable)<-c("type","length","width","area" )
 
 #area

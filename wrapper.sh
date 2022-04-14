@@ -16,3 +16,19 @@ Rscript msh1MSGraphs-noFR.R
 #If you'd like the cell size (length/width/area) plots and statistics, use
 
 Rscript CellSizesQuantify.R
+
+#If you'd like the plot comparing mitochondrial area, use
+
+Rscript MorphologyCompare.R
+
+#To go through the mitochondrial area gain comparison methods, 
+#move mtgfp-snapshots/mtgfp620 files into mtgfp-snapshots and run
+#Rscript MorphologyCompareGains.R
+
+#If you'd like to plot the day/Night experiement graphs, use
+
+Rscript mtGFPvsMsh1Graphs-daynight.r
+
+#chlroplast cololcalisation enrichment has its own wrapper, so use
+
+bash chloroWrapper.sh
