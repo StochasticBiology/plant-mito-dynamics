@@ -81,22 +81,24 @@ library(ggpubr)
 mypalette =  c("#43CD80","#63B8FF","#FFA500")
             #green      #blue       #orange
 #plot just the area means
-png("mitoMorphologyMeanAreas.png")
+pdf("mitoMorphologyMeanAreas.pdf")
   meansplot<-ggboxplot(df, x = "type", y = "areaMean", palette=mypalette, outlier.shape = NA) +  
     geom_jitter(width = 0.2,size=5,alpha=0.5,aes(color = plant,shape=cell)) +  ylab("Mean Mitochondrial area (µm\u00B2)")+ scale_y_continuous(limits = c(0,NA)) +
     #stat_pvalue_manual(pwc, label= "p = {p.adj}",step.increase = 0.09) + # Add pairwise comparisons p-value change height of label by vjust = -0.2
     stat_compare_means() +   # Add global p-value. Function does this automatically. label.y specification is positioning relative to axes
-    theme(text = element_text(size = 16))
+    theme(text = element_text(size = 16)) + 
+    scale_x_discrete(labels = c(expression(paste("mtGFP-", italic("msh1"), sep = "" )),"mtGFP"))
   meansplot
 dev.off()
 
 #Plot all the area values for both genotypes
-png("mitoMorphologyAreas.png")
+pdf("mitoMorphologyAreas.pdf")
 areasplot<-ggboxplot(extendedData, x = "type", y = "area", palette=mypalette, outlier.shape = NA) +  
   geom_jitter(width = 0.4,size=3,alpha=0.3,aes(color = plant,shape=cell)) +  ylab("Mitochondrial area (µm\u00B2)")+ scale_y_continuous(limits = c(0,NA)) +
   #stat_pvalue_manual(pwc, label= "p = {p.adj}",step.increase = 0.09) + # Add pairwise comparisons p-value change height of label by vjust = -0.2
   stat_compare_means(size=4.5) +   # Add global p-value. Function does this automatically. label.y specification is positioning relative to axes
-  theme(text = element_text(size = 16))
+  theme(text = element_text(size = 16)) + 
+  scale_x_discrete(labels = c(expression(paste("mtGFP-", italic("msh1"), sep = "" )),"mtGFP"))
 areasplot
 dev.off()
 

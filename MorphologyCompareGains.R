@@ -1,7 +1,7 @@
 #Mitochondrial Morphology comparisons
 
 #find any area data values in the directory, build a graph of them 
-dataFilesName <- Sys.glob("*25AREA*.txt")
+dataFilesName <- Sys.glob(file.path("*","*","*25AREA*.txt"))
 #need to ensure our type name is in the correct position it is found within this search function, so see data frames. 
 
 df1<-data.frame(grep("mtgfp620",dataFilesName),
@@ -19,7 +19,7 @@ colnames(df3)<-c("position","type")
 df<-rbind(df1,df2,df3)
 dfordered<-df[order(df$position),]
 
-dataFiles <- lapply(Sys.glob("*25AREA*.txt"), read.table)
+dataFiles <- lapply(Sys.glob(file.path("*","*","*25AREA*.txt")), read.table)
 
 df<-data.frame(dfordered$type,dataFilesName)
 
@@ -81,19 +81,23 @@ min(unlist(IntDenmsh))
 max(unlist(IntDenmsh)) 
 mean(unlist(IntDenmsh))
 
-p1<-hist(unlist(IntDen620))
-p2<-hist(unlist(IntDenmsh))
-p3<-hist(unlist(IntDen640))
+p1<-hist(unlist(IntDen620),)
+p2<-hist(unlist(IntDenmsh), main = "histogram of integrated density values")
+p3<-hist(unlist(IntDen640), main = "histogram of integrated density values")
 
 #msh1 vs gain 620
-plot( p1, col=rgb(0,0,1,1/4), xlim=c(0,60))
+png("compareGains620vsmsh1.png")
+plot( p1, col=rgb(0,0,1,1/4), xlim=c(0,60), main = "histogram of integrated density values")
 plot( p2, col=rgb(1,0,0,1/4), xlim=c(0,60), add=T)
-plot( p1, col=rgb(0,0,1,1/4), xlim=c(0,60),legend("topright", c("IntDen620", "IntDenmsh"), col=c(rgb(0,0,1,1/4), rgb(1,0,0,1/4)), lwd=10) )  # first histogram
- 
+legend("topright", c("IntDen620", "IntDenmsh"), col=c(rgb(0,0,1,1/4), rgb(1,0,0,1/4)), lwd=10)
+dev.off()
+
 #msh1 vs gain 640
-plot( p2, col=rgb(0,0,1,1/4), xlim=c(0,60))
+png("compareGains640vsmsh1.png")
+plot( p2, col=rgb(0,0,1,1/4), xlim=c(0,60), main = "histogram of integrated density values")
 plot( p3, col=rgb(1,0,0,1/4), xlim=c(0,60), add=T)
-plot( p3, col=rgb(0,0,1,1/4), xlim=c(0,60),legend("topright", c("IntDen640","IntDenmsh"), col=c(rgb(0,0,1,1/4), rgb(1,0,0,1/4)), lwd=10) )  # first histogram
+legend("topright", c("IntDen640","IntDenmsh"), col=c(rgb(0,0,1,1/4), rgb(1,0,0,1/4)), lwd=10)# first histogram
+dev.off()
 
 #How different, by percentage, are the grey values across the 620, 640 and msh1 mitochondria readings?
 

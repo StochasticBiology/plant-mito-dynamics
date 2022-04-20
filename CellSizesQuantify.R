@@ -6,8 +6,8 @@ library(ggplot2)
 library(rstatix)
 library(ggpubr)
 
-cellSizes<-read.csv("/Users/d1795494/Documents/GIT-plant-mito-dynamics/cellSizes/CellSizesQuantify.csv")
-cellSizesTable<-data.frame(cellSizes$Type,cellSizes$Y..long.,as.numeric(cellSizes$X..short.),cellSizes$Area.All.sizes.taken.from.ADJUSTEDCROPPED.videos)
+cellSizes<-read.csv("cellSizes/CellSizesQuantify.csv")
+cellSizesTable<-data.frame(cellSizes$Type,cellSizes$Y..long.,as.numeric(cellSizes$X..short.),cellSizes$All.sizes.taken.from.ADJUSTEDCROPPED.videos)
 colnames(cellSizesTable)<-c("type","length","width","area" )
 
 #area
@@ -75,8 +75,8 @@ ggsave("CelllengthPlot.png",lengthplot)
 
 #area
 
-x$name <- factor(x$name, levels = x$name[order(x$val)])
-x$name  # notice the changed order of factor levels
+#x$name <- factor(x$name, levels = x$name[order(x$val)])
+#x$name  # notice the changed order of factor levels
 
 compare_means(area ~ type,  data = cellSizesTable, method = "kruskal.test")
 pwc<-cellSizesTable %>% dunn_test(area ~ type, p.adjust.method = "fdr") 

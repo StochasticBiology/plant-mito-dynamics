@@ -74,7 +74,7 @@ if(kt$p.value < 0.05){
     geom_jitter(width = 0.2,aes(color = Type)) +  ylab("Overall mean speed (µm/frame)")+ scale_y_continuous(limits = c(0,NA)) +
     stat_pvalue_manual(pwc, label= "p = {p.adj}",step.increase = 0.09) + # Add pairwise comparisons p-value change height of label by vjust = -0.2
     stat_compare_means(label.y= max(speedm$speedMean)+(max(speedm$speedMean)/2.5)) +   # Add global p-value. Function does this automatically. label.y specification is positioning relative to axes
-    heme(text = element_text(size = 15),legend.position="none")
+    theme(text = element_text(size = 15),legend.position="none")
   speedplot
   
   #ggsave(paste("speedMeanPlot-DayNight.png",sep=""),speedplot,width = 10, height=16, units = "cm")
@@ -86,7 +86,7 @@ if(kt$p.value < 0.05){
   speedplot<-ggboxplot(speedm, x = "Type", y = "speedMean", color = "Type", palette = mypalette,  outlier.shape = NA) +  
     geom_jitter(width = 0.2,aes(color = Type)) +  ylab("Overall mean speed (µm/frame)") + scale_y_continuous(limits = c(0,NA)) +
     stat_compare_means(label.y= max(speedm$speedMean)+(max(speedm$speedMean)/2.5))   +   # Add global p-value. Function does this automatically. label.y specification is positioning relative to axes
-    heme(text = element_text(size = 15),legend.position="none")
+    theme(text = element_text(size = 15),legend.position="none")
   speedplot
   
   #ggsave(paste("speedMeanPlot-DayNight.png",sep=""),speedplot,width = 10, height=16, units = "cm")
@@ -128,7 +128,7 @@ if(kt$p.value < 0.05){
     geom_jitter(width = 0.2,aes(color = Type)) +  ylab("Overall mean colocalisation time (frames)")+ scale_y_continuous(limits = c(0,NA)) +
     stat_pvalue_manual(pwc, label= "p = {p.adj}",step.increase = 0.09) + # Add pairwise comparisons p-value change height of label by vjust = -0.2
     stat_compare_means(label.y= max(colocmean$colocMean)+(max(colocmean$colocMean)/2.5))   +   # Add global p-value. Function does this automatically. label.y specification is positioning relative to axes
-    heme(text = element_text(size = 15),legend.position="none")
+    theme(text = element_text(size = 15),legend.position="none")
   colocplot
   
   #ggsave(paste("colocMeanPlot-DayNight.png",sep=""),colocplot,width = 10, height=16, units = "cm")
@@ -140,7 +140,7 @@ if(kt$p.value < 0.05){
   colocplot<-ggboxplot(colocmean, x = "Type", y = "colocMean", color = "Type", palette = mypalette,  outlier.shape = NA) +  
     geom_jitter(width = 0.2,aes(color = Type)) +  ylab("Overall mean colocalisation time (frames)") + scale_y_continuous(limits = c(0,NA)) +
     stat_compare_means(label.y= max(colocmean$colocMean)+(max(colocmean$colocMean)/2.5))  +   # Add global p-value. Function does this automatically. label.y specification is positioning relative to axes
-    heme(text = element_text(size = 15),legend.position="none")
+    theme(text = element_text(size = 15),legend.position="none")
   colocplot
   
   #ggsave(paste("colocMeanPlot-DayNight.png",sep=""),colocplot,width = 10, height=16, units = "cm")
@@ -183,7 +183,7 @@ for(f in c(5,10,50,100,120)){
       geom_jitter(width = 0.2,aes(color = Type)) +  ylab("Mean intermitochondrial distance (µm)") + scale_y_continuous(limits = c(0,NA)) +
       stat_pvalue_manual(pwc, label= "p = {p.adj}",step.increase = 0.09) + # Add pairwise comparisons p-value change height of label by vjust = -0.2
       stat_compare_means(label.y= max(dm$DistsMeans)+(max(dm$DistsMeans)/2.5))   +   # Add global p-value. Function does this automatically. label.y specification is positioning relative to axes
-      heme(text = element_text(size = 15),legend.position="none")
+      theme(text = element_text(size = 15),legend.position="none")
     distsplot
     
     #ggsave(paste("distsMeanPlotFrame-DayNight",f,".png",sep=""),distsplot,width = 10, height=16, units = "cm")
@@ -195,7 +195,7 @@ for(f in c(5,10,50,100,120)){
     distsplot<-ggboxplot(dm, x = "Type", y = "DistsMeans", color = "Type", palette = mypalette,  outlier.shape = NA) +  
       geom_jitter(width = 0.2,aes(color = Type)) +  ylab("Mean intermitochondrial distance (µm)") +  scale_y_continuous(limits = c(0,NA)) +
       stat_compare_means(label.y= max(dm$DistsMeans)+(max(dm$DistsMeans)/2.5))   +   # Add global p-value. Function does this automatically. label.y specification is positioning relative to axes
-      heme(text = element_text(size = 15),legend.position="none")
+      theme(text = element_text(size = 15),legend.position="none")
     distsplot
     
     #ggsave(paste("distsMeanPlotFrame-DayNight",f,".png",sep=""),distsplot,width = 10, height=16, units = "cm")
@@ -235,7 +235,7 @@ if(kt$p.value < 0.05){
     geom_jitter(width = 0.2,aes(color = Type)) +  ylab("Overall mean intermitochondrial distance (µm)")+ scale_y_continuous(limits = c(0,NA)) +
     stat_pvalue_manual(pwc, label= "p = {p.adj}",step.increase = 0.09) + # Add pairwise comparisons p-value change height of label by vjust = -0.2
     stat_compare_means(label.y= max(dm$DistsMeans)+(max(dm$DistsMeans)/2.5))  +   # Add global p-value. Function does this automatically. label.y specification is positioning relative to axes
-    heme(text = element_text(size = 15),legend.position="none")
+    theme(text = element_text(size = 15),legend.position="none")
   overalldistsplot
   
   #ggsave(paste("distsMeanofMeansPlot-DayNight.png",sep=""),overalldistsplot,width = 10, height=16, units = "cm")
@@ -247,7 +247,7 @@ if(kt$p.value < 0.05){
   overalldistsplot<-ggboxplot(dm, x = "Type", y = "DistsMeans", color = "Type", palette = mypalette,  outlier.shape = NA) +  
     geom_jitter(width = 0.2,aes(color = Type)) +  ylab("Overall mean intermitochondrial distance (µm)") + scale_y_continuous(limits = c(0,NA)) +
     stat_compare_means(label.y= max(dm$DistsMeans)+(max(dm$DistsMeans)/2.5))    +   # Add global p-value. Function does this automatically. label.y specification is positioning relative to axes
-    heme(text = element_text(size = 15),legend.position="none")
+    theme(text = element_text(size = 15),legend.position="none")
   overalldistsplot
   
   #ggsave(paste("distsMeanofMeansPlot-DayNight.png",sep=""),overalldistsplot,width = 10, height=16, units = "cm")
@@ -297,7 +297,7 @@ degplots<-function(frames){
         geom_jitter(width = 0.2,aes(color = Type)) +  ylab("Mean degree")  +  scale_y_continuous(limits = c(0,NA)) +
         stat_pvalue_manual(pwc, label= "p = {p.adj}",step.increase = 0.09) + # Add pairwise comparisons p-value change height of label by vjust = -0.2
         stat_compare_means(label.y= max(degm$DegreeMeans)+(max(degm$DegreeMeans)/2.5))   +   # Add global p-value. Function does this automatically. label.y specification is positioning relative to axes
-        heme(text = element_text(size = 15),legend.position="none")
+        theme(text = element_text(size = 15),legend.position="none")
       degreeplot
       
       ggsave(paste("degreeMeansPlotFrame-DayNight",f,".png",sep=""),degreeplot,width = 10, height=16, units = "cm")
@@ -311,7 +311,7 @@ degplots<-function(frames){
       degreeplot<-ggboxplot(degm, x = "Type", y = "DegreeMeans", color = "Type", palette = mypalette, outlier.shape = NA) +  
         geom_jitter(width = 0.2,aes(color = Type)) +  ylab("Mean degree") +  scale_y_continuous(limits = c(0,NA)) +
         stat_compare_means(label.y= max(degm$DegreeMeans)+(max(degm$DegreeMeans)/2.5))  +   # Add global p-value. Function does this automatically. label.y specification is positioning relative to axes
-        heme(text = element_text(size = 15),legend.position="none")
+        theme(text = element_text(size = 15),legend.position="none")
       degreeplot
       
       #ggsave(paste("degreeMeansPlotFrame-DayNight",f,".png",sep=""),degreeplot,width = 10, height=16, units = "cm")
@@ -368,7 +368,7 @@ effplots<-function(frames){
         geom_jitter(width = 0.2,aes(color = Type)) +  ylab("Mean network efficiency") +  scale_y_continuous(limits = c(0,NA)) +
         stat_pvalue_manual(pwc, label= "p = {p.adj}",step.increase = 0.09) + # Add pairwise comparisons p-value change height of label by vjust = -0.2
         stat_compare_means(label.y= max(effm$EfficiencyMeans)+(max(effm$EfficiencyMeans)/2.5))  +   # Add global p-value. Function does this automatically. label.y specification is positioning relative to axes
-        heme(text = element_text(size = 15),legend.position="none")
+        theme(text = element_text(size = 15),legend.position="none")
       efficiencyplot
       
       #ggsave(paste("efficiencyMeansPlotFrame-DayNight",f,".png",sep=""),efficiencyplot,width = 10, height=16, units = "cm")
@@ -382,7 +382,7 @@ effplots<-function(frames){
       efficiencyplot<-ggboxplot(effm, x = "Type", y = "EfficiencyMeans", color = "Type", palette = mypalette,  outlier.shape = NA) +  
         geom_jitter(width = 0.2,aes(color = Type)) + ylab("Mean network efficiency")  + scale_y_continuous(limits = c(0,NA)) +
         stat_compare_means(label.y= max(effm$EfficiencyMeans)+(max(effm$EfficiencyMeans)/2.5))  +   # Add global p-value. Function does this automatically. label.y specification is positioning relative to axes
-        heme(text = element_text(size = 15),legend.position="none")
+        theme(text = element_text(size = 15),legend.position="none")
       efficiencyplot
       
       #ggsave(paste("efficiencyMeansPlotFrame-DayNight",f,".png",sep=""),efficiencyplot,width = 10, height=16, units = "cm")
@@ -441,7 +441,7 @@ diaplots<-function(frames){
         geom_jitter(width = 0.2,aes(color = Type)) +  ylab("Network diameter") +  scale_y_continuous(limits = c(0,NA)) +
         stat_pvalue_manual(pwc, label= "p = {p.adj}",step.increase = 0.09) + # Add pairwise comparisons p-value change height of label by vjust = -0.2
         stat_compare_means(label.y= max(diam$NetworkDiameter)+(max(diam$NetworkDiameter)/2.5)) +   # Add global p-value. Function does this automatically. label.y specification is positioning relative to axes
-        heme(text = element_text(size = 15),legend.position="none")
+        theme(text = element_text(size = 15),legend.position="none")
       diameterplot
       
       #ggsave(paste("diameterPlotFrame-DayNight",f,".png",sep=""),diameterplot,width = 10, height=16, units = "cm")
@@ -455,7 +455,7 @@ diaplots<-function(frames){
       diameterplot<-ggboxplot(diam, x = "Type", y = "NetworkDiameter", color = "Type", palette = mypalette,  outlier.shape = NA) +  
         geom_jitter(width = 0.2,aes(color = Type)) +  ylab("Network diameter")  + scale_y_continuous(limits = c(0,NA)) +
         stat_compare_means(label.y= max(diam$NetworkDiameter)+(max(diam$NetworkDiameter)/2.5)) +   # Add global p-value. Function does this automatically. label.y specification is positioning relative to axes
-        heme(text = element_text(size = 15),legend.position="none")
+        theme(text = element_text(size = 15),legend.position="none")
       diameterplot
       
       #ggsave(paste("diameterPlotFrame-DayNight",f,".png",sep=""),diameterplot,width = 10, height=16, units = "cm")
@@ -514,7 +514,7 @@ bcplots<-function(frames){
         geom_jitter(width = 0.2,aes(color = Type)) +  ylab("Mean node betweeness") +  scale_y_continuous(limits = c(0,NA)) +
         stat_pvalue_manual(pwc, label= "p = {p.adj}",step.increase = 0.09) + # Add pairwise comparisons p-value change height of label by vjust = -0.2
         stat_compare_means(label.y= max(BC$meanBC)+(max(BC$meanBC)/2.5))  +   # Add global p-value. Function does this automatically. label.y specification is positioning relative to axes
-        heme(text = element_text(size = 15),legend.position="none")
+        theme(text = element_text(size = 15),legend.position="none")
       bcplot
       
       #ggsave(paste("bcPlotFrame-DayNight",f,".png",sep=""),bcplot,width = 10, height=16, units = "cm")
@@ -528,7 +528,7 @@ bcplots<-function(frames){
       bcplot<-ggboxplot(BC, x = "Type", y = "meanBC", color = "Type", palette = mypalette,  outlier.shape = NA) +  
         geom_jitter(width = 0.2,aes(color = Type)) +  ylab("Mean node betweeness")  + scale_y_continuous(limits = c(0,NA)) +
         stat_compare_means(label.y= max(BC$meanBC)+(max(BC$meanBC)/2.5)) +   # Add global p-value. Function does this automatically. label.y specification is positioning relative to axes
-        heme(text = element_text(size = 15),legend.position="none")
+        theme(text = element_text(size = 15),legend.position="none")
       bcplot
       
       #ggsave(paste("bcPlotFrame-DayNight",f,".png",sep=""),bcplot,width = 10, height=16, units = "cm")
@@ -622,7 +622,7 @@ nodeplots<-function(){
         geom_jitter(width = 0.2,aes(color = Type)) +  ylab("Node number")  +  scale_y_continuous(limits = c(0,NA)) +
         stat_pvalue_manual(pwc, label= "p = {p.adj}",step.increase = 0.09) + # Add pairwise comparisons p-value change height of label by vjust = -0.2
         stat_compare_means(label.y= max(nn$NodeNumber)+(max(nn$NodeNumber)/2.5)) +  # Add global p-value. Function does this automatically. label.y specification is positioning relative to axes
-        heme(text = element_text(size = 15),legend.position="none")
+        theme(text = element_text(size = 15),legend.position="none")
       
       nodeplot
       
@@ -637,7 +637,7 @@ nodeplots<-function(){
       nodeplot<-ggboxplot(nn, x = "Type", y = "NodeNumber", color = "Type", palette = mypalette, outlier.shape = NA) +  
         geom_jitter(width = 0.2,aes(color = Type)) + ylab("Node number") +  scale_y_continuous(limits = c(0,NA)) +
         stat_compare_means(label.y= max(nn$NodeNumber)+(max(nn$NodeNumber)/2.5)) +   # Add global p-value. Function does this automatically. label.y specification is positioning relative to axes
-        heme(text = element_text(size = 15),legend.position="none")
+        theme(text = element_text(size = 15),legend.position="none")
       nodeplot
       
       #ggsave(paste("NodeNumberPlotFrame-DayNight",f,".png",sep=""),nodeplot,width = 10, height=16, units = "cm")
@@ -694,7 +694,7 @@ edgeplots<-function(){
         geom_jitter(width = 0.2,aes(color = Type)) +  ylab("Edge number")  +  scale_y_continuous(limits = c(0,NA)) +
         stat_pvalue_manual(pwc, label= "p = {p.adj}",step.increase = 0.09) + # Add pairwise comparisons p-value change height of label by vjust = -0.2
         stat_compare_means(label.y= max(en$EdgeNumber)+(max(en$EdgeNumber)/2.5)) +   # Add global p-value. Function does this automatically. label.y specification is positioning relative to axes
-        heme(text = element_text(size = 15),legend.position="none")
+        theme(text = element_text(size = 15),legend.position="none")
       edgeplot
       
       #ggsave(paste("EdgeNumberPlotFrame-DayNight",f,".png",sep=""),edgeplot,width = 10, height=16, units = "cm")
@@ -708,7 +708,7 @@ edgeplots<-function(){
       edgeplot<-ggboxplot(en, x = "Type", y = "EdgeNumber", color = "Type", palette = mypalette,  outlier.shape = NA) +  
         geom_jitter(width = 0.2,aes(color = Type)) +  ylab("Edge number") +  scale_y_continuous(limits = c(0,NA)) +
         stat_compare_means(label.y= max(en$EdgeNumber)+(max(en$EdgeNumber)/2.5)) +   # Add global p-value. Function does this automatically. label.y specification is positioning relative to axes
-        heme(text = element_text(size = 15),legend.position="none")
+        theme(text = element_text(size = 15),legend.position="none")
       edgeplot
       
       #ggsave(paste("EdgeNumberPlotFrame-DayNight",f,".png",sep=""),edgeplot,width = 10, height=16, units = "cm")
