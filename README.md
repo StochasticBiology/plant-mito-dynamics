@@ -60,6 +60,7 @@ Graph plotting and statistical analysis was done using scripts
  - `msh1MSGraphs.R` For Figure 4, S6, S7
  - `msh1MSGraphs-noFR.R` For Figure 2, 3
  - `CellSizesQuantify.R` For Figure S5, uses `cellSizes/CellSizesQuantify.csv` as input
+ - `mtGFPvsMsh1Graphs-daynight.R`, `chloroWrapper.sh`, `MorphologyCompare.R` form Figure 6.
 
 ## Video data for msh1 project
 
@@ -67,6 +68,14 @@ All video data is available in subdirectories
 - `mtgfp-videos`
 - `msh1-videos`
 - `friendly-videos`
+
+## Day/Night videos (alongside raw trajectories) and morphology snapshots are in 
+- `msh1-day`
+- `msh1-night`
+- `mtgfp-day`
+- `mtgfp-night`
+- `msh1-snapshots`
+- `mtgfp-snapshots`
 
 ## References
 

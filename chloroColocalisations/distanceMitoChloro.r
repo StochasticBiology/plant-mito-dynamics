@@ -86,7 +86,7 @@ calculateN_c <-  function(t) {
   N_c <- 0
   tallylist <- c()
   store <- c()
-  print(c)
+  #print(c)
   keepcoord <- c()
   tally <- 0
   if (t %in% chloroTrajs$t) {
@@ -154,7 +154,7 @@ N_ctotal <- 0
 Elist <- c()
 for (t in 1:max(mitoTrajs$t)) {
 #for (t in 105) {
-  print(t)
+  #print(t)
   #N = number of mitos in each frame
   N <- nrow(mitoTrajs[mitoTrajs$t == t,])
   #Go through all chloros in their specific frames (or else it won't be colocalisation to an actual chloro), find any mitos within distance d of them.

@@ -326,7 +326,7 @@ deg <-ggarrange(plotlist=degplots(c(10,50,100)), labels = c("A.i","A.ii","A.iii"
                 nrow = 3,
                 ncol = 1 ,font.label = list(size = 18))
 deg
-ggsave(paste("FigureS7PartA.png",sep=""),deg,width = 10, height=45, units = "cm")
+ggsave(paste("FigureS8PartA.png",sep=""),deg,width = 10, height=45, units = "cm")
 
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -398,7 +398,7 @@ eff <-ggarrange(plotlist=effplots(c(10,50,100)), labels = c("B.i","B.ii","B.iii"
                 nrow = 3,
                 ncol = 1 ,font.label = list(size = 18))
 eff
-ggsave(paste("FigureS7PartB.png",sep=""),eff,width = 10, height=45, units = "cm")
+ggsave(paste("FigureS8PartB.png",sep=""),eff,width = 10, height=45, units = "cm")
 
 
 
@@ -471,7 +471,7 @@ dia <-ggarrange(plotlist=diaplots(c(10,50,100)), labels = c("C.i","C.ii","C.iii"
                nrow = 3,
                ncol = 1 ,font.label = list(size = 18))
 dia
-ggsave(paste("FigureS7PartC.png",sep=""),dia,width = 10, height=45, units = "cm")
+ggsave(paste("FigureS8PartC.png",sep=""),dia,width = 10, height=45, units = "cm")
 
 
 
@@ -543,7 +543,7 @@ bc <-ggarrange(plotlist=bcplots(c(10,50,100)), labels = c("D.i","D.ii","D.iii"),
               nrow = 3,
               ncol = 1 ,font.label = list(size = 18))
 bc
-ggsave(paste("FigureS7PartD.png",sep=""),bc,width = 10, height=45, units = "cm")
+ggsave(paste("FigureS8PartD.png",sep=""),bc,width = 10, height=45, units = "cm")
 
 
 

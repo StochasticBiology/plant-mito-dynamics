@@ -1,6 +1,6 @@
 
 #This script will look within all subdirectories for any .xml files, and run them through the trajectory-analysis.R script.
-find . -name "*.xml" -print0 | while read -d $'\0' file
+find . -name "*[0-9].xml" -print0 | while read -d $'\0' file
 do  
     Rscript trajectory-analysis.R "$file" 1.6 10 50 100
 done
@@ -21,9 +21,8 @@ Rscript CellSizesQuantify.R
 
 Rscript MorphologyCompare.R
 
-#To go through the mitochondrial area gain comparison methods, 
-#move mtgfp-snapshots/mtgfp620 files into mtgfp-snapshots and run
-#Rscript MorphologyCompareGains.R
+#To go through the mitochondrial area gain comparison methods, use 
+Rscript MorphologyCompareGains.R
 
 #If you'd like to plot the day/Night experiement graphs, use
 
