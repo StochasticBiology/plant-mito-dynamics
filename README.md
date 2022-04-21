@@ -57,7 +57,7 @@ You will find all raw trajectory files from TrackMate export in the subdirectori
 ## Graph plotting for msh1 project
 
 Graph plotting and statistical analysis was done using scripts
- - `msh1MSGraphs.R` For Figure 4, S6, S7
+ - `msh1MSGraphs.R` For Figure 4, S6, S7, S8
  - `msh1MSGraphs-noFR.R` For Figure 2, 3
  - `CellSizesQuantify.R` For Figure S5, uses `cellSizes/CellSizesQuantify.csv` as input
  - `mtGFPvsMsh1Graphs-daynight.R`, `chloroWrapper.sh`, `MorphologyCompare.R` form Figure 6.
