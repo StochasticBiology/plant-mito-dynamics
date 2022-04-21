@@ -69,7 +69,7 @@ All video data is available in subdirectories
 - `msh1-videos`
 - `friendly-videos`
 
-## Day/Night videos (alongside raw trajectories) and morphology snapshots are in 
+# Day/Night videos (alongside raw trajectories) and morphology snapshots are in 
 - `msh1-day`
 - `msh1-night`
 - `mtgfp-day`
