@@ -19,7 +19,7 @@ Rscript CellSizesQuantify.R
 
 #If you'd like the plot comparing mitochondrial area, use
 
-Rscript MorphologyCompare.R
+Rscript MorphologyCompare.r
 
 #To go through the mitochondrial area gain comparison methods, use 
 Rscript MorphologyCompareGains.R
