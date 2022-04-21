@@ -650,7 +650,7 @@ n <-ggarrange(plotlist=nodeplots(), labels = c("A.i","A.ii","A.iii","A.iv"),
               nrow = 1,
               ncol = 4 ,font.label = list(size = 18) , hjust=0.01 ,vjust=3)
 n
-ggsave(paste("NodeNumberPlotFramesTogether.png",sep=""),n,width = 35, height=15, units = "cm")
+ggsave(paste("FigureS7partA.png",sep=""),n,width = 35, height=15, units = "cm")
 
 
 
@@ -722,5 +722,5 @@ e <-ggarrange(plotlist=edgeplots(), labels = c("B.i","B.ii","B.iii","B.iv"),
               nrow = 1,
               ncol = 4 ,font.label = list(size = 18) , hjust=0.01 ,vjust=3)
 e
-ggsave(paste("EdgeNumberPlotFramesTogether.png",sep=""),e,width = 35, height=15, units = "cm")
+ggsave(paste("FigureS7partB.png",sep=""),e,width = 35, height=15, units = "cm")
 
