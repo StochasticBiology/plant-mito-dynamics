@@ -67,7 +67,7 @@ labels = rep(1:length(lengths), times = lengths)
 df = data.frame(traj=labels, t=ts+1, x=xs, y=ys)
 
 # output the trajectories in simple format
-output.filename = paste(filename, "-trajs.csv", sep="")
+output.filename = paste(filename, "-rawtrajs.csv", sep="")
 write.csv(df, output.filename, row.names=FALSE)
 
 # overall stats for this dataset
